@@ -64,4 +64,14 @@ table {
 	
 }
 
+.sidebar a {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight:bold;
+  text-transform: uppercase;
+}
 
+.mainpicture {
+ height: 500px;
+ background-image: url("../images/background.png");
+}
