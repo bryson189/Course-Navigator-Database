@@ -46,23 +46,39 @@ table {
 {
     height: 15px;
     width: 400px;
-   
+
 }
 
-#searchBar { 
+#searchBar {
 
 	background-color: #eaf8fc;
-    background-image: linear-gradient(#fff, #d4e8ec);    
+    background-image: linear-gradient(#fff, #d4e8ec);
     border-width: 1px;
     border-style: solid;
-    border-color: #c4d9df #a4c3ca #83afb7;            
+    border-color: #c4d9df #a4c3ca #83afb7;
     width: 500px;
     height: 20px;
     padding: 5px;
     margin: 100px auto 50px;
     overflow: hidden;
-	
+
 }
+
+#mixtape {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+body {
+
+  	background-color: #0000ff;
+    color: #ffffff;
+
+}
+
 
 .sidebar a {
   margin-left: auto;
