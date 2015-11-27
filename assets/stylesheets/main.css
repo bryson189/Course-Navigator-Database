@@ -1,10 +1,11 @@
+    /*
     #search
     {
         height: 15px;
         width: 420px;
        
     }
-    /*
+    
     .jumbotron #searchbar{
 
     	background-color: #eaf8fc;
@@ -36,10 +37,6 @@
       padding: 0px;
     }
 
-    .buttons li{
-      display:inline;
-      padding-right: 15px;
-    }
 
     .jumbotron .searchbar{
       display:inline;
@@ -93,6 +90,16 @@
     }
     .btn-group-vertical .btn{
       width:100%;
+      font-weight: bold;
     }
+    .side-search .form-control{
+      display:inline;
+      width:80%;
+      float:left;
+      font-style: italic;
+    }
+    .side-search .btn{
+      width:20%;
+      float:left;
 
-
+    }
