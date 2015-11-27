@@ -87,18 +87,25 @@
     }
     .btn-group-vertical{
       width:100%;
+      text-align:left;
     }
     .btn-group-vertical .btn{
       width:100%;
       font-weight: bold;
+      float:left;
+      border-radius: 0px;
+      text-align: left;
     }
+
     .side-search .form-control{
+      margin-top:10px;
       display:inline;
       width:80%;
       float:left;
       font-style: italic;
     }
     .side-search .btn{
+      margin-top:9px;
       width:20%;
       float:left;
 

@@ -10,25 +10,24 @@
 	<body>
 
 		<header>
-			<h1> Course Navigator </h1>
+			<h1> <b>Course Navigator </b></h1>
 		</header>
-
+		
 		<nav class="navbar navbar-inverse">
 		  <div class="container">
-		    <div class="navbar-header">
-		      <a class="navbar-brand" href="#">Our Logo</a>
-		           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
-		    </div>
 		    <div class="collapse navbar-collapse" id="myNavbar">
-		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="index.html">Home</a></li>
-		        <!--<li><a href="#">About</a></li>-->
-		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 		        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 		      </ul>
-
+			    <div class="nav navbar-nav navbar-left">
+			      	<a class="navbar-brand" href="#">Our Logo</a>
+			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
+				    <ul class="nav navbar-nav banner-home">
+				      <li class="active"><a href="index.html">Home</a></li>
+				      <!--<li><a href="#">About</a></li>-->
+				    </ul>  
+			    </div>
 		    </div>
 		  </div>
 		</nav>
@@ -37,18 +36,12 @@
 		  <div class="row content">
 		    <div class="col-lg-2 sidenav ">
 		    	<div class="btn-group-vertical" role="group">
-					<form action="courses.html">
-    					<input type="submit" value="Courses" class="btn btn-default">
-					</form>
-					<form action="professors.html">
-    					<input type="submit" value="Professors" class="btn btn-default">
-					</form>
-					<form action="textbooks.html">
-    					<input type="submit" value="Textbooks" class="btn btn-default">
-					</form>
-					<form action="Tutors.html">
-    					<input type="submit" value="Tutors" class="btn btn-default">
-					</form>
+			    	<div class="btn-group-vertical" role="group">
+						<a href = "courses.html"><button type="button" class="btn btn-default">Courses</button></a>
+						<a href = "professors.html"><button type="button" class="btn btn-default">Professors</button></a>
+						<a href = "textbooks.html"><button type="button" class="btn btn-default">Textbooks</button></a>
+						<a href = "tutors.html"><button type="button" class="btn btn-default">Tutors</button></a>
+					</div>
 				</div>
 		    </div>
 		    <div class="col-sm-8 text-left"> 
