@@ -17,13 +17,13 @@
 		  <div class="container">
 		    <div class="collapse navbar-collapse" id="myNavbar">
 			    <ul class="nav navbar-nav navbar-right">
-			      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 			    </ul>
 			    <a class="navbar-brand" href="#">Our Logo</a>
 			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
 				<ul class="nav navbar-nav banner-home">
-				    <li class="active"><a href="index.html">Home</a></li>
+				    <li class="active"><a href="index.php">Home</a></li>
 				      <!--<li><a href="#">About</a></li>-->
 				</ul>  
 		    </div>
@@ -34,13 +34,13 @@
 		  <div class="row content">
 		    <div class="col-lg-2 sidenav ">
 		    	<div class="btn-group-vertical" role="group">
-					<a href = "courses.html"><button  class="btn btn-default">
+					<a href = "courses.php"><button  class="btn btn-default">
 						<span class="glyphicon glyphicon-education"></span> Courses</button></a>
-					<a href = "professors.html"><button class="btn btn-default">
+					<a href = "professors.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-user" ></span> Professors</button></a>
-					<a href = "textbooks.html"><button class="btn btn-default">
+					<a href = "textbooks.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-book" ></span> Textbooks</button></a>
-					<a href = "tutors.html"><button class="btn btn-default">
+					<a href = "tutors.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-blackboard" ></span> Tutors</button></a>
 				</div>
 				<div class="side-search">
@@ -50,15 +50,14 @@
 				</form>
 		    </div>
 		    <div class="col-lg-10 text-left"> 
-
-				<h2>Please enter your login information</h2>
 				<div class="loginmain">
-				<form action="action_page.php">
+				<h2>Please enter your login information</h2>
+				<form action="studentlogin.php" method = "post">
 					Username:<br>
-					<input type="text" name="username" placeholder="@ucalgary.ca">
+					<input type="text" name="email" placeholder="@ucalgary.ca">
 					<br>
 					Password:<br>
-					<input type="password" name="psw">
+					<input type="password" name="password">
 					<br><br>
 					<input type="submit" value="Submit">
 				</form>
@@ -69,9 +68,9 @@
 		<footer class="container-fluid text-center">
 			<small>&copy; 2015 Course Navigator </small>
 			<nav>
-				<a href="index.html">Home</a>
-				<a href="aboutus.html">About Us</a>
-				<a href="contactus.html">Contact Us</a>
+				<a href="index.php">Home</a>
+				<a href="aboutus.php">About Us</a>
+				<a href="contactus.php">Contact Us</a>
 			</nav>
 		</footer>
 
