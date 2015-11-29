@@ -1,59 +1,283 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+	  	<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+   		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="assets/stylesheets/main.css">
-		<link href="css/bootstrap.css" rel = "bootstrap">
-		<title>Henry's World</title> 
+		<title>Course Navigator</title> 
 	</head> 
-
 	<body>
+
 		<header>
-			<h1> Welcome to Henry's World </h1>
+			<h1> <b>Course Navigator </b></h1>
 		</header>
 
-		<!-- Buttons -->
-		<div id = "Buttons"> 
-			<a href = "login.html"> <img src = "loginButton.jpg" alt = "Login">  </a>
-			<a href = "login.html"> <img src = "signupButton.png" alt = "Register" >  </a>
-		</div> 
-		<!-- Search Bar -->
-		<form> 
-			<input id = "Search Bar" type = "text" placeholder = "Search Our Database...">
-			<input id = "Submit" type = "submit" value = "Search">
-		</form>
-		<!-- Professors -->
+		<nav class="navbar navbar-inverse">
+		  <div class="container">
+		    <div class="collapse navbar-collapse" id="myNavbar">
+			    <ul class="nav navbar-nav navbar-right">
+			      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+			    </ul>
+			    <a class="navbar-brand" href="#">Our Logo</a>
+			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
+				<ul class="nav navbar-nav banner-home">
+				    <li class="active"><a href="index.html">Home</a></li>
+				      <!--<li><a href="#">About</a></li>-->
+				</ul>  
+		    </div>
+		  </div>
+		</nav>
 
-		<article>
-			<img src = "assets/images/professor.jpg" alt = "Professor" style="height:228px;">  </a>
-			<h2>Henry Tran</h2>
-			<p>Hi! My name is Henry. I like Pot! <br> Watch out for my stare ( ͡° ͜ʖ ͡°). </p>
-			<h3>Contact Number: </h2>
-			<h3>E-mail Address: </h2>
-			<h3>Office Hours: </h2>
-			<h3>Courses: </h2>
-		</article>
+		<div class="container">    
+		  <div class="row content">
+		    <div class="col-lg-2 sidenav ">
+		    	<div class="btn-group-vertical" role="group">
+					<a href = "courses.html"><button  class="btn btn-default">
+						<span class="glyphicon glyphicon-education"></span> Courses</button></a>
+					<a href = "professors.html"><button class="btn btn-default">
+						<span class="glyphicon glyphicon-user" ></span> Professors</button></a>
+					<a href = "textbooks.html"><button class="btn btn-default">
+						<span class="glyphicon glyphicon-book" ></span> Textbooks</button></a>
+					<a href = "tutors.html"><button class="btn btn-default">
+						<span class="glyphicon glyphicon-blackboard" ></span> Tutors</button></a>
+				</div>
+				<div class="side-search">
+					<input type="text" class="form-control" placeholder="Search">
+					<button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
+				</div>
+				</form>
+		    </div>
+		    <div class="col-lg-10 text-left"> 
 
-		<aside>
-			<nav>
-				<a href="courses.html">Courses</a>
-				<a href="professors.html">Professors</a>
-				<a href="textbooks.html">Textbooks</a>
-				<a href="tutors.html">Tutors</a>
-			</nav>
-		</aside>
+			    <h1>Professors</h1>
+			    <a href="#A_anchor">A</a>
+			    <a href="#B_anchor">B</a>
+			    <a href="#C_anchor">C</a>
+			    <a href="#D_anchor">D</a>
+			    <a href="#E_anchor">E</a>
+			    <a href="#F_anchor">F</a>
+			    <a href="#G_anchor">G</a>
+			    <a href="#H_anchor">H</a>
+			    <a href="#I_anchor">I</a>
+			    <a href="#J_anchor">J</a>
+			    <a href="#K_anchor">K</a>
+			    <a href="#L_anchor">L</a>
+			    <a href="#M_anchor">M</a>
+			    <a href="#N_anchor">N</a>
+			    <a href="#O_anchor">O</a>
+			    <a href="#P_anchor">P</a>
+			    <a href="#Q_anchor">Q</a>
+			    <a href="#R_anchor">R</a>
+			    <a href="#S_anchor">S</a>
+			    <a href="#T_anchor">T</a>
+			    <a href="#U_anchor">U</a>
+			    <a href="#V_anchor">V</a>
+			    <a href="#W_anchor">W</a>
+			    <a href="#X_anchor">X</a>
+			    <a href="#Y_anchor">Y</a>
+			    <a href="#Z_anchor">Z</a>
+			    
+			    <div class="prof_list">
+			    	<a name="A_anchor"></a>
+			    	<h3>A</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
 
-		<footer>
+			    	<a name="B_anchor"></a>
+			    	<h3>B</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
 
-			<small>&copy; Henry's World</small>
+			    	<a name="C_anchor"></a>
+			    	<h3>C</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
 
+			    	<a name="D_anchor"></a>
+			    	<h3>D</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="E_anchor"></a>
+			    	<h3>E</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="F_anchor"></a>
+			    	<h3>F</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="G_anchor"></a>
+			    	<h3>G</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="H_anchor"></a>
+			    	<h3>H</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="I_anchor"></a>
+			    	<h3>I</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="J_anchor"></a>
+			    	<h3>J</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="K_anchor"></a>
+			    	<h3>K</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="L_anchor"></a>
+			    	<h3>L</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="M_anchor"></a>
+			    	<h3>M</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="N_anchor"></a>
+			    	<h3>N</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="O_anchor"></a>
+			    	<h3>O</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="P_anchor"></a>
+			    	<h3>P</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="Q_anchor"></a>
+			    	<h3>Q</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="R_anchor"></a>
+			    	<h3>R</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="S_anchor"></a>
+			    	<h3>S</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="T_anchor"></a>
+			    	<h3>T</h3>
+			    	<ul>
+			    		<li><a href="professor_template.html">Tran, Henry</a></li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="U_anchor"></a>
+			    	<h3>U</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="V_anchor"></a>
+			    	<h3>V</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="W_anchor"></a>
+			    	<h3>W</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="X_anchor"></a>
+			    	<h3>X</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name="Y_anchor"></a>
+			    	<h3>Y</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+			    	<a name ="Z_anchor"></a>
+			    	<h3>Z</h3>
+			    	<ul>
+			    		<li>test</li>
+			    		<li>test</li>
+			    	</ul>
+
+
+
+			    </div>
+		    </div>
+		  </div>
+		</div>
+
+		<footer class="container-fluid text-center">
+			<small>&copy; 2015 Course Navigator </small>
 			<nav>
 				<a href="index.html">Home</a>
 				<a href="aboutus.html">About Us</a>
 				<a href="contactus.html">Contact Us</a>
 			</nav>
+		</footer>
 
-		</footer>	
 	</body> 
 
 	
