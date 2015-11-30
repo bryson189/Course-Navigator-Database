@@ -116,3 +116,23 @@
     footer a{
       margin-left:10px;
     }
+	
+	.toppad {
+		margin-top: 40px;
+	}
+	
+	.panel > .panel-heading {
+		
+		color: black;
+		background-color: #FFA500;
+		font-size: 30px;
+		
+	}
+
+	.table-user-information > tbody > tr > td {
+		border-top: 0;
+	}
+	
+	
+	
+	
