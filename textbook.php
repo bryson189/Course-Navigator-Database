@@ -51,64 +51,29 @@
 		    </div>
 		    <div class="col-lg-10 text-left"> 
 
-		    	<?php 
+			    <h1>Textbooks</h1>
+
+			    <?php 
 					$db = mysql_connect("localhost","root","default");
 					if(!$db){
-						die("MySQL connection error. " . mysql_error());
+						die("Error: " . mysql_error());
 					}
 					$db_select = mysql_select_db("course_navigator", $db);
 					if(!$db_select){
-						die("Something went wrong with the query. " . mysql_error());
+						die("Error: " . mysql_error());
 					}
 
-
-					$email = $_GET['email'];
-
-					//echo $email;
-
-
-					$result = mysql_query('SELECT fname, lname, information FROM professor WHERE email = "'.$email.'"', $db);
-					$row = mysql_fetch_row($result);
-					//echo $row[0]." ".$row[1];
-
-					echo '<div class="prof_content">';
-					echo '<img src="assets/images/'.$row[0].$row[1].'.jpg" alt = "'.$row[0].$row[1].'_pic" style = "width:270px;height:360px">';
-					echo '<div class="prof_text">';
-					echo '<h1>'.$row[0]." ".$row[1].'</h1>';
-					echo '<h3>Information: </h3>';
-					echo '<p>'.$row[2].'</p>';
-					echo '<h3>Courses: </h3>';
-					echo '<p><ul>';
-					$courses_taught = mysql_query('SELECT deptcode, coursenum FROM teaches WHERE profemail = "'.$email.'"');
-					while($courserow = mysql_fetch_array($courses_taught)){
-						echo '<li>'.$courserow[0].$courserow[1];
+					$result = mysql_query("SELECT name, editionnum FROM textbook ORDER BY name", $db);
+					if(!$result){
+						die("Error: " . mysql_error());
 					}
-					echo '</ul></p>';
-					//echo '<p>SWAG101</p>';
-					echo '<h3>Hours: </h3>';
-					echo '<p>24/7</p>';
-					echo '</div>';
-					echo '</div>';
-					//echo ''
 
-					/*
-
-		    	<div class="prof_content">
-			    <img src="assets/images/professor.jpg" alt="prof_pic" style="width:270px;height:360px">
-
-			    <div class="prof_text">
-			    <h1>Henry Tran</h1>
-			    <h3>Information: </h3>
-			    <p>Peek a boo!</p>
-			    <h3>Courses: </h3>
-			    <p>SWAG101</p>
-			    <h3>Hours: </h3>
-			    <p>24/7</p>
-			</div>
-			</div>
-			*/
-			?>
-
+					echo "<ul>";
+					while($row = mysql_fetch_array($result)){
+						echo '<li><a href="textbook_template.html">'.$row[0].", ".$row[1]."th ed</a></li>";
+					}
+					echo "</ul>";
+			    ?>
 		    </div>
 		  </div>
 		</div>
@@ -126,3 +91,8 @@
 
 	
 </html> 
+
+<?php
+	mysql_close();
+?>
+
