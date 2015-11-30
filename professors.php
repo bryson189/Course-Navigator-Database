@@ -93,14 +93,14 @@
 						die("Error: " . mysql_error());
 					}
 
-					$result = mysql_query("SELECT fname, lname FROM professor", $db);
+					$result = mysql_query("SELECT fname, lname FROM professor ORDER BY lname", $db);
 					if(!$result){
 						die("Error: " . mysql_error());
 					}
 
 					echo "<ul>";
 					while($row = mysql_fetch_array($result)){
-						echo '<li><a href="professor_template.html">'.$row[0]." ".$row[1]."</a></li>";
+						echo '<li><a href="professor_template.html">'.$row[1].", ".$row[0]."</a></li>";
 					}
 					echo "</ul>";
 			    ?>
@@ -317,6 +317,6 @@
 </html> 
 
 <?php
-	
+	mysql_close();
 ?>
 
