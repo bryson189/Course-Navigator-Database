@@ -115,7 +115,7 @@
     }
     footer a{
       margin-left:10px;
-    }
+    }	
 	
 	.toppad {
 		margin-top: 40px;
@@ -158,5 +158,12 @@
 		
 	}
 	
-	
-	
+    .prof_content{
+      padding:20px;
+      overflow:hidden;
+    }
+
+    .prof_content img{
+      float:left;
+    }
+

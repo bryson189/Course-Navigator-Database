@@ -52,6 +52,8 @@
 		    <div class="col-lg-10 text-left"> 
 
 			    <h1>Professors</h1>
+			    
+			    <!--
 			    <a href="#A_anchor">A</a>
 			    <a href="#B_anchor">B</a>
 			    <a href="#C_anchor">C</a>
@@ -78,6 +80,8 @@
 			    <a href="#X_anchor">X</a>
 			    <a href="#Y_anchor">Y</a>
 			    <a href="#Z_anchor">Z</a>
+			    //-->
+			
 
 			    <?php 
 					$db = mysql_connect("localhost","root","s#Rh=s-uS4=8");
@@ -90,23 +94,23 @@
 					}
 
 					$result = mysql_query("SELECT fname, lname FROM professor", $db);
-					if($result){
+					if(!$result){
 						die("Error: " . mysql_error());
 					}
 
+					echo "<ul>";
 					while($row = mysql_fetch_array($result)){
-						echo $row[0]." ".$row[1]." ".$row[2]." ".$row[3]."<br />";
+						echo '<li><a href="professor_template.html">'.$row[0]." ".$row[1]."</a></li>";
 					}
-
+					echo "</ul>";
 			    ?>
 
+			    
+			    <!--
 			    <div class="prof_list">
 			    	<a name="A_anchor"></a>
 			    	<h3>A</h3>
 			    	<ul>
-			    		<?php
-			    		echo "<li>".$row[1].", ".$row[0]."</li>";
-			    		?>
 			    		<li>test</li>
 			    		
 			    		<li>test</li>
@@ -287,9 +291,13 @@
 			    		<li>test</li>
 			    	</ul>
 
+			    
+
 
 
 			    </div>
+
+			    //-->
 		    </div>
 		  </div>
 		</div>
@@ -307,3 +315,8 @@
 
 	
 </html> 
+
+<?php
+	
+?>
+
