@@ -123,8 +123,8 @@
 	
 	.panel > .panel-heading {
 		
-		color: black;
-		background-color: #FAAFBA	;
+		color: white;
+		background-color: #c9d8c5;
 		font-size: 30px;
 		font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
 		
@@ -142,6 +142,21 @@
 		font-weight: bold;
 	}
 	
+	.panel-footer {
+		background-color: #c9d8c5;
+	}
+	
+	.profile-button {
+		
+		background-color: #a8b6bf;
+		
+	}
+	
+	.glyphicon {
+		
+		color: white;
+		
+	}
 	
 	
 	
