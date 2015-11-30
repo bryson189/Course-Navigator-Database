@@ -36,9 +36,9 @@
 		    	<div class="btn-group-vertical" role="group">
 					<a href = "courses.html"><button  class="btn btn-default">
 						<span class="glyphicon glyphicon-education"></span> Courses</button></a>
-					<a href = "professors.html"><button class="btn btn-default">
+					<a href = "professors.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-user" ></span> Professors</button></a>
-					<a href = "textbooks.html"><button class="btn btn-default">
+					<a href = "textbook.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-book" ></span> Textbooks</button></a>
 					<a href = "tutors.html"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-blackboard" ></span> Tutors</button></a>
@@ -84,23 +84,23 @@
 			
 
 			    <?php 
-					$db = mysql_connect("localhost","root","s#Rh=s-uS4=8");
+					$db = mysql_connect("localhost","root","default");
 					if(!$db){
-						die("Error: " . mysql_error());
+						die("MySQL connection error. " . mysql_error());
 					}
-					$db_select = mysql_select_db("CourseNav", $db);
+					$db_select = mysql_select_db("course_navigator", $db);
 					if(!$db_select){
-						die("Error: " . mysql_error());
+						die("Error connecting to database. " . mysql_error());
 					}
 
-					$result = mysql_query("SELECT fname, lname FROM professor", $db);
+					$result = mysql_query("SELECT fname, lname, email FROM professor ORDER BY lname", $db);
 					if(!$result){
-						die("Error: " . mysql_error());
+						die("Something went wrong with the query. " . mysql_error());
 					}
 
 					echo "<ul>";
 					while($row = mysql_fetch_array($result)){
-						echo '<li><a href="professor_template.html">'.$row[0]." ".$row[1]."</a></li>";
+						echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 					}
 					echo "</ul>";
 			    ?>
