@@ -25,18 +25,16 @@ if(isset($_SESSION['username'])){
 		<nav class="navbar navbar-inverse">
 		  <div class="container">
 		    <div class="collapse navbar-collapse" id="myNavbar">
-		        <ul class="nav navbar-nav navbar-right">
-		          <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-		          <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
-		        </ul>
-			    <div class="nav navbar-nav navbar-left">
-			      	<a class="navbar-brand" href="#">Our Logo</a>
+			    <ul class="nav navbar-nav navbar-right">
+			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+			    </ul>
+			    <a class="navbar-brand" href="#">Our Logo</a>
 			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
-				    <ul class="nav navbar-nav banner-home">
-				      <li class="active"><a href="index.php">Home</a></li>
+				<ul class="nav navbar-nav banner-home">
+				    <li class="active"><a href="index.php">Home</a></li>
 				      <!--<li><a href="#">About</a></li>-->
-				    </ul>  
-			    </div>
+				</ul>  
 		    </div>
 		  </div>
 		</nav>

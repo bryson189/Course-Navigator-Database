@@ -11,6 +11,7 @@ if(isset($_SESSION['username'])){
 
 ?>
 
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -36,7 +37,7 @@ if(isset($_SESSION['username'])){
 			    <a class="navbar-brand" href="#">Our Logo</a>
 			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
 				<ul class="nav navbar-nav banner-home">
-				    <li class="active"><a href="logged-in-home.php">Home</a></li>
+				    <li class="active"><a href="index.php">Home</a></li>
 				      <!--<li><a href="#">About</a></li>-->
 				</ul>  
 		    </div>
@@ -63,10 +64,26 @@ if(isset($_SESSION['username'])){
 				</form>
 		    </div>
 		    <div class="col-lg-10 text-left"> 
-		    	<div class="jumbotron">
+		    	<div class="change-settings">
+				<form action="change-settings.php" method = "post">
+					First Name:<br>
+					<input type="text" name="fname" placeholder=<?php echo $username;?>>
+					<br>
+					Last Name:<br>
+					<input type="text" name="fname" placeholder=<?php echo $username;?>>
+					<br>
+					Enter your current password:<br>
+					<input type="password" name="password">
+					<br>
+					New password:<br>
+					<input type="text" name="newpassword">
+					<br>
+					Confirm your password:<br>
+					<input type="password" name="newpassword-confirm">
+					<br><br>
+					<input type="submit" value="Submit">
+				</form>
 				</div>
-			    <h1>Welcome, <?php echo $username;?> </h1>
-			    <p>This is where the main content should be.</p>
 		    </div>
 		  </div>
 		</div>
