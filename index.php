@@ -1,3 +1,13 @@
+<?php
+error_reporting(E_ALL & ~E_NOTICE);
+session_start();
+
+if(isset($_SESSION['username'])){
+	$username = $_SESSION['username'];
+	header('Location: logged-in-home.php');
+}
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>

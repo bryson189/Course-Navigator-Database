@@ -24,14 +24,10 @@ echo "Invalid Login Credentials.";
 //3.1.4 if the user is logged in Greets the user with message
 if (isset($_SESSION['username'])){
 $username = $_SESSION['username'];
-// echo "Hi " . $username . "
-// ";
-// echo "This is the Members Area
-// ";
- echo "<a href='logout.php'>Logout</a>";
- header('Location: professors.php');
+
+ header('Location: logged-in-home.php');
 }else{
-//3.2 When the user visits the page first time, simple login form will be displayed.
+
 	die(mysql_error());
 }
 ?>
