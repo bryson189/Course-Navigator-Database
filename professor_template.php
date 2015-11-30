@@ -51,6 +51,48 @@
 		    </div>
 		    <div class="col-lg-10 text-left"> 
 
+		    	<?php 
+					$db = mysql_connect("localhost","root","s#Rh=s-uS4=8");
+					if(!$db){
+						die("MySQL connection error. " . mysql_error());
+					}
+					$db_select = mysql_select_db("CourseNav", $db);
+					if(!$db_select){
+						die("Something went wrong with the query. " . mysql_error());
+					}
+
+
+					$email = $_GET['email'];
+
+					//echo $email;
+
+
+					$result = mysql_query('SELECT fname, lname, information FROM professor WHERE email = "'.$email.'"', $db);
+					$row = mysql_fetch_row($result);
+					//echo $row[0]." ".$row[1];
+
+					echo '<div class="prof_content">';
+					echo '<img src="assets/images/'.$row[0].$row[1].'.jpg" alt = "'.$row[0].$row[1].'_pic" style = "width:270px;height:360px">';
+					echo '<div class="prof_text">';
+					echo '<h1>'.$row[0]." ".$row[1].'</h1>';
+					echo '<h3>Information: </h3>';
+					echo '<p>'.$row[2].'</p>';
+					echo '<h3>Courses: </h3>';
+					echo '<p><ul>';
+					$courses_taught = mysql_query('SELECT deptcode, coursenum FROM teaches WHERE profemail = "'.$email.'"');
+					while($courserow = mysql_fetch_array($courses_taught)){
+						echo '<li>'.$courserow[0].$courserow[1];
+					}
+					echo '</ul></p>';
+					//echo '<p>SWAG101</p>';
+					echo '<h3>Hours: </h3>';
+					echo '<p>24/7</p>';
+					echo '</div>';
+					echo '</div>';
+					//echo ''
+
+					/*
+
 		    	<div class="prof_content">
 			    <img src="assets/images/professor.jpg" alt="prof_pic" style="width:270px;height:360px">
 
@@ -64,6 +106,8 @@
 			    <p>24/7</p>
 			</div>
 			</div>
+			*/
+			?>
 
 		    </div>
 		  </div>
