@@ -124,11 +124,16 @@
 	.panel > .panel-heading {
 		
 		color: black;
-		background-color: #FFA500;
+		background-color: #FAAFBA	;
 		font-size: 30px;
+		font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
 		
 	}
 
+	.table-user-information > tbody > tr:first-child {
+		border-top: 0;
+	}
+	
 	.table-user-information > tbody > tr > td {
 		border-top: 0;
 	}
