@@ -134,14 +134,7 @@
 
 		    	?>
 
-		    	<div class="prof_content">
-			    <img src="assets/images/professor.jpg" alt="textbook_pic" style="width:270px;height:360px">
 
-			    <div class="prof_text">
-			    <h1>Henry's Textbook</h1>
-			    <h3>Information: </h3>
-			    <p>Peek a boo!</p>
-			</div>
 			</div>
 
 		    </div>
