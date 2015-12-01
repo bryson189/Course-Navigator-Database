@@ -51,16 +51,16 @@
 		    </div>
 		    <div class="col-lg-10 text-left"> 
 		    		<h2> <b>Create An Account </b> </h2>
-                	<form action="registerprocess.php" method="post"> <br>
+                	<form action="register-process.php" method="post"> <br>
 						First Name:<input type="text" name="fname" /><br><br>
 						Last Name:<input type="text" name="lname" /><br><br>
 						Email: <input type="text" name="email" /><br><br>
                     	Password: <input type="password" name="password" /><br><br>
-						Phone:<input type="text" name="pnumber" /><br><br> User Type: 
+						Contact Number:<input type="text" name="pnumber" /><br><br> User Type: 
 						<select name = "usertype">
-  							<option value="student">Student</option>
-  							<option value="professor">Professor</option>
-  							<option value="tutor">Tutor</option>
+  							<option value="Student">Student</option>
+  							<option value="Professor">Professor</option>
+  							<option value="Tutor">Tutor</option>
 						</select>
                     <br><br><button type="submit" class="btn btn-default">REGISTER</button>
                   </form>
