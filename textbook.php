@@ -56,23 +56,303 @@
 			    <?php 
 					$db = mysql_connect("localhost","root","default");
 					if(!$db){
-						die("Error: " . mysql_error());
+						die("MySQL connection error. " . mysql_error());
 					}
 					$db_select = mysql_select_db("course_navigator", $db);
 					if(!$db_select){
-						die("Error: " . mysql_error());
+						die("Error connecting to database. " . mysql_error());
 					}
 
 					$result = mysql_query("SELECT name, editionnum FROM textbook ORDER BY name", $db);
 					if(!$result){
-						die("Error: " . mysql_error());
+						die("Something went wrong with the query. " . mysql_error());
 					}
+
+					/*
 
 					echo "<ul>";
 					while($row = mysql_fetch_array($result)){
 						echo '<li><a href="textbook_template.html">'.$row[0].", ".$row[1]."th ed</a></li>";
 					}
 					echo "</ul>";
+					*/
+
+					$starts_a = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'A%'");
+					$starts_b = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'B%'");
+					$starts_c = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'C%'");
+					$starts_d = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'D%'");
+					$starts_e = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'E%'");
+					$starts_f = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'F%'");
+					$starts_g = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'G%'");
+					$starts_h = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'H%'");
+					$starts_i = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'I%'");
+					$starts_j = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'J%'");
+					$starts_k = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'K%'");
+					$starts_l = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'L%'");
+					$starts_m = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'M%'");
+					$starts_n = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'N%'");
+					$starts_o = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'O%'");
+					$starts_p = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'P%'");
+					$starts_q = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'Q%'");
+					$starts_r = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'R%'");
+					$starts_s = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'S%'");
+					$starts_t = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'T%'");
+					$starts_u = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'U%'");
+					$starts_v = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'V%'");
+					$starts_w = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'W%'");
+					$starts_x = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'X%'");
+					$starts_y = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'Y%'");
+					$starts_z = mysql_query("SELECT name, editionnum, isbn FROM textbook WHERE name LIKE 'Z%'");
+
+					echo '<a href="#A_anchor">A</a>
+			    			<a href="#B_anchor">B</a>
+			    			<a href="#C_anchor">C</a>
+			    			<a href="#D_anchor">D</a>
+			    			<a href="#E_anchor">E</a>
+			    			<a href="#F_anchor">F</a>
+			    			<a href="#G_anchor">G</a>
+			    			<a href="#H_anchor">H</a>
+			    			<a href="#I_anchor">I</a>
+			    			<a href="#J_anchor">J</a>
+			    			<a href="#K_anchor">K</a>
+			    			<a href="#L_anchor">L</a>
+			    			<a href="#M_anchor">M</a>
+			    			<a href="#N_anchor">N</a>
+			    			<a href="#O_anchor">O</a>
+			    			<a href="#P_anchor">P</a>
+			    			<a href="#Q_anchor">Q</a>
+			    			<a href="#R_anchor">R</a>
+			    			<a href="#S_anchor">S</a>
+			    			<a href="#T_anchor">T</a>
+			    			<a href="#U_anchor">U</a>
+			    			<a href="#V_anchor">V</a>
+			    			<a href="#W_anchor">W</a>
+			    			<a href="#X_anchor">X</a>
+			    			<a href="#Y_anchor">Y</a>
+			    			<a href="#Z_anchor">Z</a>';
+
+			    	echo '<div class="prof_list">
+			    			<a name="A_anchor"></a>
+			    			<h3>A</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_a)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+
+
+			    	echo '<a name="B_anchor"></a>
+			    			<h3>B</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_b)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+			    	echo '<a name="C_anchor"></a>
+			    			<h3>C</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_c)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+			    	echo '<a name="D_anchor"></a>
+			    			<h3>D</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_d)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+			    	echo '<a name="E_anchor"></a>
+			    			<h3>E</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_e)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+					echo '<a name="F_anchor"></a>
+			    			<h3>F</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_f)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+			    	echo '<a name="G_anchor"></a>
+			    			<h3>G</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_g)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+			    	echo '<a name="H_anchor"></a>
+			    			<h3>H</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_h)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+			    	echo '<a name="I_anchor"></a>
+			    			<h3>I</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_i)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+
+			    	echo '<a name="J_anchor"></a>
+			    			<h3>J</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_j)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+
+			    	echo '<a name="K_anchor"></a>
+			    			<h3>K</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_k)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+			    	echo '<a name="L_anchor"></a>
+			    			<h3>L</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_l)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+			    	echo '<a name="M_anchor"></a>
+			    			<h3>M</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_m)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+			    	echo '<a name="N_anchor"></a>
+			    			<h3>N</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_n)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+
+			    	echo '<a name="O_anchor"></a>
+			    			<h3>O</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_o)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+
+			    	echo '<a name="P_anchor"></a>
+			    			<h3>P</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_p)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+
+			    	echo '<a name="Q_anchor"></a>
+			    			<h3>Q</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_q)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+
+			    	echo '<a name="R_anchor"></a>
+			    			<h3>R</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_r)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+
+			    	echo '<a name="S_anchor"></a>
+			    			<h3>S</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_s)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+
+			    	echo '<a name="T_anchor"></a>
+			    			<h3>T</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_t)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+
+			    	echo '<a name="U_anchor"></a>
+			    			<h3>U</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_u)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+			    	echo '<a name="V_anchor"></a>
+			    			<h3>V</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_v)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+
+			    	echo '<a name="W_anchor"></a>
+			    			<h3>W</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_w)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+			    	echo '<a name="X_anchor"></a>
+			    			<h3>X</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_x)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+			    	echo '<a name="Y_anchor"></a>
+			    			<h3>Y</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_y)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul>';
+
+			    	echo '<a name="Z_anchor"></a>
+			    			<h3>Z</h3>
+			    			<ul>';
+			    	while($row = mysql_fetch_array($starts_z)){
+						echo '<li><a href="textbook_template.php?isbn='.$row[2].'">'.$row[0].", ".$row[1]."th ed"."</a></li>";
+					}
+			    	echo '</ul></div>';
+
+
 			    ?>
 		    </div>
 		  </div>

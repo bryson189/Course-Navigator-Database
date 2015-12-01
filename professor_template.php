@@ -67,10 +67,12 @@
 					//echo $email;
 
 
-					$result = mysql_query('SELECT fname, lname, information FROM professor WHERE email = "'.$email.'"', $db);
+					$result = mysql_query('SELECT fname, lname, email, pnumber, information, hours FROM professor WHERE email = "'.$email.'"', $db);
 					$row = mysql_fetch_row($result);
 					//echo $row[0]." ".$row[1];
 
+
+					/*
 					echo '<div class="prof_content">';
 					echo '<img src="assets/images/'.$row[0].$row[1].'.jpg" alt = "'.$row[0].$row[1].'_pic" style = "width:270px;height:360px">';
 					echo '<div class="prof_text">';
@@ -90,6 +92,136 @@
 					echo '</div>';
 					echo '</div>';
 					//echo ''
+					*/
+
+
+
+
+					echo '<div class = "col-md-9	 toppad">
+							<div class="panel panel-default">
+								<div class="panel-heading"> Profile </div>
+					
+								<div class="panel-body"> 
+									<div class ="row">
+										<div class = "col-md-5"> ';
+					echo '<img src = "assets/images/'.$row[0].$row[1].'.jpg" class = "img-thumbnail" width="350" height="350"></div>';
+					echo '<div class = "col-md-6">
+								<table class = "table table-user-information">
+									<tbody>
+										<tr>
+											<td class = "data-head"> Name: <td>';
+					echo '<td>'.$row[0].' '.$row[1].'</td>';
+					echo '</tr>
+										<tr>
+											<td class = "data-head"> Information: <td>';
+					echo '<td>'.$row[4].'</td></tr>';
+					echo '<tr>
+											<td class = "data-head"> Courses: <td>';
+
+					$courses_taught = mysql_query('SELECT deptcode, coursenum FROM teaches WHERE profemail = "'.$email.'"');
+					echo '<td>';
+					while($courserow = mysql_fetch_array($courses_taught)){
+						echo $courserow[0].$courserow[1].'<br>';
+					}
+
+					echo '</td></tr>';
+
+					echo '<tr>
+							<td class = "data-head"> Hours: <td>
+							<td>'.$row[5].'</td> 
+						</tr>';
+
+					echo '<tr>
+							<td class = "data-head"> Phone No: <td>
+							<td>'.$row[3].'</td> 
+						</tr>';
+
+					echo '<tr>
+							<td class = "data-head"> Email: <td>
+							<td>'.$row[2].' </td> 
+						</tr>';
+
+					echo '</tbody></table></div></div></div>';
+
+
+					echo '<div class = "panel-footer"> 
+						<a href = "mailto:'.$email.'" type = "button" class = "btn profile-button btn-sm"> 
+							<span class = "glyphicon glyphicon-envelope footer-icon"> </span>
+						</a>
+						<div class = "pull-right">
+							<a href = "edit.html" type = "button" class = "btn profile-button btn-sm">
+								<span class = "glyphicon glyphicon-edit footer-icon"> </span>
+							</a>
+							<a href = "delete.html" type = "button" class = "btn profile-button btn-sm">
+								<span class = "glyphicon glyphicon-remove footer-icon"> </span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>';
+
+
+
+
+
+									
+
+
+					/*
+<div class = "col-md-9 toppad">
+				<div class="panel panel-default">
+					<div class="panel-heading"> Profile </div>
+					
+					<div class="panel-body"> 
+						<div class ="row">
+							<div class = "col-md-5"> 
+								<img src = "assets/images/bryson.jpg" class = "img-thumbnail" width="350" height="350"> 
+							</div>
+							
+							<div class = "col-md-5">
+								<table class = "table table-user-information">
+									<tbody>
+										<tr>
+											<td class = "data-head"> Name: <td>
+											<td> Brycin Ding </td> 
+										</tr>
+										<tr>
+											<td class = "data-head"> Courses: <td>
+											<td> CSGO 101 <br><br> CPSC 471 <br><br> Aesthetics 189 </td> 
+										</tr>
+										<tr>
+											<td class = "data-head"> Experience: <td>
+											<td> Masters in Software Engineering </td> 
+										</tr>
+										<tr>
+											<td class = "data-head"> Phone Number: <td>
+											<td>  403-189-6969 </td> 
+										</tr>
+										<tr>
+											<td class = "data-head"> Email: <td>
+											<td>brycin189@singapore.sg </td> 
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class = "panel-footer"> 
+						<a href = "mailto:brycin189@gmail.com" type = "button" class = "btn profile-button btn-sm"> 
+							<span class = "glyphicon glyphicon-envelope footer-icon"> </span>
+						</a>
+						<div class = "pull-right">
+							<a href = "edit.html" type = "button" class = "btn profile-button btn-sm">
+								<span class = "glyphicon glyphicon-edit footer-icon"> </span>
+							</a>
+							<a href = "delete.html" type = "button" class = "btn profile-button btn-sm">
+								<span class = "glyphicon glyphicon-remove footer-icon"> </span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+					*/
 
 					/*
 

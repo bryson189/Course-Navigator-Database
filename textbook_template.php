@@ -49,48 +49,73 @@
 				</div>
 				</form>
 		    </div>
-			
-	
-			<div class = "col-md-9 toppad">
-				<div class="panel panel-default">
-					<div class="panel-heading"> Profile </div>
+		    <div class="col-lg-10 text-left"> 
+
+
+		    	<?php
+		    		$db = mysql_connect("localhost","root","default");
+					if(!$db){
+						die("MySQL connection error. " . mysql_error());
+					}
+					$db_select = mysql_select_db("course_navigator", $db);
+					if(!$db_select){
+						die("Something went wrong with the query. " . mysql_error());
+					}
+
+
+					$isbn = $_GET['isbn'];
+
+
+
+
+					$result = mysql_query('SELECT * FROM textbook WHERE isbn = "'.$isbn.'"', $db);
+					$row = mysql_fetch_row($result);
+
+
+
+					echo '<div class = "col-md-9	 toppad">
+							<div class="panel panel-default">
+								<div class="panel-heading"> Textbook Info </div>
 					
-					<div class="panel-body"> 
-						<div class ="row">
-							<div class = "col-md-5"> 
-								<img src = "assets/images/swagsondeng.jpg" class = "img-thumbnail" width="350" height="350"> 
-							</div>
-							
-							<div class = "col-md-5">
+								<div class="panel-body"> 
+									<div class ="row">
+										<div class = "col-md-5"> ';
+					echo '<img src = "assets/images/'.$row[1].'.jpg" class = "img-thumbnail" width="350" height="350"></div>';
+					echo '<div class = "col-md-6">
 								<table class = "table table-user-information">
 									<tbody>
 										<tr>
-											<td class = "data-head"> Name: <td>
-											<td> Brycin Ding </td> 
-										</tr>
+											<td class = "data-head"> Name: <td>';
+					echo '<td>'.$row[0].', '.$row[2].'th ed.</td>';
+					echo '</tr>
 										<tr>
-											<td class = "data-head"> Courses: <td>
-											<td> CSGO 101 <br><br> CPSC 471 <br><br> Aesthetics 189 </td> 
-										</tr>
-										<tr>
-											<td class = "data-head"> Experience: <td>
-											<td> Masters in Software Engineering </td> 
-										</tr>
-										<tr>
-											<td class = "data-head"> Phone Number: <td>
-											<td>  403-189-6969 </td> 
-										</tr>
-										<tr>
-											<td class = "data-head"> Email: <td>
-											<td>brycin189@singapore.sg </td> 
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-					<div class = "panel-footer"> 
-						<a href = "mailto:brycin189@gmail.com" type = "button" class = "btn profile-button btn-sm"> 
+											<td class = "data-head"> Author(s): <td>';
+
+					$authors = mysql_query('SELECT finit, lname FROM authors WHERE isbn = "'.$isbn.'"', $db);
+					echo '<td>';
+					while($author_rows = mysql_fetch_array($authors)){
+						echo $author_rows[0].' '.$author_rows[1].'<br>';
+					}
+					echo '</td></tr>';
+
+					echo '<tr>
+							<td class = "data-head"> ISBN: <td>';
+
+					echo '<td>'.$isbn.'</td></tr>';
+
+
+					$onlineretailers = mysql_query('SELECT url, price, domain FROM onlineretailers WHERE isbn = "'.$isbn.'"', $db);
+					echo '<tr>
+							<td class = "data-head"> Online Retailers: <td>
+							<td>';
+					while($retailer_rows = mysql_fetch_array($onlineretailers)){
+						echo $retailer_rows[0];
+					}
+					echo'</td> 
+						</tr>';
+					echo '</tbody></table></div></div></div>';
+					echo '<div class = "panel-footer"> 
+						<a href = "mailto:'.$email.'" type = "button" class = "btn profile-button btn-sm"> 
 							<span class = "glyphicon glyphicon-envelope footer-icon"> </span>
 						</a>
 						<div class = "pull-right">
@@ -103,12 +128,25 @@
 						</div>
 					</div>
 				</div>
+			</div>';
+
+
+
+		    	?>
+
+		    	<div class="prof_content">
+			    <img src="assets/images/professor.jpg" alt="textbook_pic" style="width:270px;height:360px">
+
+			    <div class="prof_text">
+			    <h1>Henry's Textbook</h1>
+			    <h3>Information: </h3>
+			    <p>Peek a boo!</p>
 			</div>
-			
-			
 			</div>
+
+		    </div>
+		  </div>
 		</div>
-			
 
 		<footer class="container-fluid text-center">
 			<small>&copy; 2015 Course Navigator </small>
