@@ -66,7 +66,7 @@ if(isset($_SESSION['email'])){
 		    <div class="col-lg-10 text-left"> 
 		    	<div class="change-settings">
 		    	<h2> <b> My Account </b></h2>
-				<form action="change-settings.php" method = "post">
+<!-- 				<form action="change-settings.php" method = "post">
 					<br>Email Address: <?php echo $email;?> <br>
 					User Type: <?php echo $usertype;?> <br>
 					<br>
@@ -86,7 +86,47 @@ if(isset($_SESSION['email'])){
 					<input type="password" name="new-password-confirm">
 					<br><br>
 					<input type="submit" value="Submit">
-				</form>
+				</form> -->
+ 				<form action = "change-settings.php" method = "post" class="form-horizontal">
+					<br>Email Address: <?php echo $email;?> <br>
+					User Type: <?php echo $usertype;?> <br>
+					<br>
+				  <div class="form-group">
+				    <label for="inputname" class="col-sm-2 control-label">First Name</label>
+				    <div class="col-sm-4">
+				      <input type="text" name = "new-fname" class="form-control" placeholder=<?php echo $_SESSION['fname'];?> required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputname" class="col-sm-2 control-label">Last Name</label>
+				    <div class="col-sm-4">
+				      <input type="text" name = "new-lname" class="form-control" placeholder=<?php echo $_SESSION['lname'];?> required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputname" class="col-sm-2 control-label">Enter your current password</label>
+				    <div class="col-sm-4">
+				      <input type="password" name = "current-password" class="form-control" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label">New Password</label>
+				    <div class="col-sm-4">
+				      <input type="password" name = "new-password" class="form-control"  required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label">Confirm your password</label>
+				    <div class="col-sm-4">
+				      <input type="password" name = "new-password-confirm" class="form-control"  required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" value = "Submit" class="btn btn-default">Submit</button>
+				    </div>
+				  </div>
+				</form>  
 				</div>
 		    </div>
 		  </div>

@@ -51,16 +51,26 @@
 		    </div>
 		    <div class="col-lg-10 text-left"> 
 				<div class="loginmain">
-				<h2>Please enter your login information</h2>
-				<form action="studentlogin.php" method = "post">
-					Username:<br>
-					<input type="text" name="email" placeholder="@ucalgary.ca">
-					<br>
-					Password:<br>
-					<input type="password" name="password">
-					<br><br>
-					<input type="submit" value="Submit">
-				</form>
+				<h2>Please enter your login information</h2> <br>
+ 				<form action = "studentlogin.php" method = "post" class="form-horizontal">
+				  <div class="form-group">
+				    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+				    <div class="col-sm-4">
+				      <input type="email" name = "email" class="form-control" placeholder="@ucalgary.ca" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+				    <div class="col-sm-4">
+				      <input type="password" name = "password" class="form-control" placeholder="Password" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" value = "Submit" class="btn btn-default">Sign in</button>
+				    </div>
+				  </div>
+				</form> 
 				</div>
 		    </div>
 		  </div>

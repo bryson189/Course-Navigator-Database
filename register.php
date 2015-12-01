@@ -18,7 +18,7 @@
 		    <div class="collapse navbar-collapse" id="myNavbar">
 			    <ul class="nav navbar-nav navbar-right">
 			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+			      <li><a href="register.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 			    </ul>
 			    <a class="navbar-brand" href="#">Our Logo</a>
 			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
@@ -50,20 +50,54 @@
 				</form>
 		    </div>
 		    <div class="col-lg-10 text-left"> 
-		    		<h2> <b>Create An Account </b> </h2>
-                	<form action="register-process.php" method="post"> <br>
-						First Name:<input type="text" name="fname" /><br><br>
-						Last Name:<input type="text" name="lname" /><br><br>
-						Email: <input type="text" name="email" /><br><br>
-                    	Password: <input type="password" name="password" /><br><br>
-						Contact Number:<input type="text" name="pnumber" /><br><br> User Type: 
+		    		<h2> <b>Create An Account </b> </h2> <br>
+ 				<form action = "register-process.php" method = "post" class="form-horizontal">
+				  <div class="form-group">
+				    <label for="inputname" class="col-sm-2 control-label">First Name</label>
+				    <div class="col-sm-4">
+				      <input type="text" name = "fname" class="form-control" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputname" class="col-sm-2 control-label">Last Name</label>
+				    <div class="col-sm-4">
+				      <input type="text" name = "lname" class="form-control" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputname" class="col-sm-2 control-label">Email</label>
+				    <div class="col-sm-4">
+				      <input type="text" name = "email" class="form-control" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+				    <div class="col-sm-4">
+				      <input type="password" name = "password" class="form-control"  required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label">Contact Number</label>
+				    <div class="col-sm-4">
+				      <input type="tel" name = "pnumber" pattern=".{10,}" required title="Minimum of 10 characters" class="form-control" required>
+				    </div>
+				  </div>
+				  <div class = "form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label">User Type:</label>
+						<div class="col-sm-4">
 						<select name = "usertype">
   							<option value="Student">Student</option>
   							<option value="Professor">Professor</option>
   							<option value="Tutor">Tutor</option>
 						</select>
-                    <br><br><button type="submit" class="btn btn-default">REGISTER</button>
-                  </form>
+						</div>
+					</div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" value = "Submit" class="btn btn-default">Register</button>
+				    </div>
+				  </div>
+				</form>  
 		    </div>
 		  </div>
 		</div>
