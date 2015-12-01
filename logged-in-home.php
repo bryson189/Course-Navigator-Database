@@ -2,13 +2,38 @@
 error_reporting(E_ALL & ~E_NOTICE);
 session_start();
 
-if(isset($_SESSION['username'])){
-	$username = $_SESSION['username'];
+if(isset($_SESSION['email'])){
+	$email = $_SESSION['email'];
 } else{
 	header('Location: index.php');
 	die();
 }
+require('connect.php');
 
+ if ( $_SESSION['usertype'] == 'Student')
+ {
+		$query = "SELECT fname, lname FROM `student` WHERE email='$email';";
+		$result = mysql_query($query) or die(mysql_error());
+		$row = mysql_fetch_array($result);
+		$_SESSION['fname'] = $row[0];
+		$_SESSION['lname'] = $row[1];
+ }
+ else if ( $_SESSION['usertype'] == 'Professor')
+ {
+		$query = "SELECT fname, lname FROM `professor` WHERE email='$email';";
+		$result = mysql_query($query) or die(mysql_error());
+		$row = mysql_fetch_array($result);
+		$_SESSION['fname'] = $row[0];
+		$_SESSION['lname'] = $row[1];
+ }
+ else
+ {
+		$query = "SELECT fname, lname FROM `tutor` WHERE email = '$email';";
+		$result = mysql_query($query) or die(mysql_error());
+		$row = mysql_fetch_array($result);
+		$_SESSION['fname'] = $row[0];
+		$_SESSION['lname'] = $row[1];
+ }
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +90,7 @@ if(isset($_SESSION['username'])){
 		    <div class="col-lg-10 text-left"> 
 		    	<div class="jumbotron">
 				</div>
-			    <h1>Welcome, <?php echo $username;?> </h1>
+			    <h1>Welcome, <?php echo $_SESSION['fname'];?> <?php echo $_SESSION['lname'];?></h1>
 			    <p>This is where the main content should be.</p>
 		    </div>
 		  </div>

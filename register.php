@@ -1,17 +1,3 @@
-<?php
-error_reporting(E_ALL & ~E_NOTICE);
-session_start();
-
-if(isset($_SESSION['email'])){
-	$email = $_SESSION['email'];
-	$usertype = $_SESSION['usertype'];
-} else{
-	header('Location: index.php');
-	die();
-}
-
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -31,13 +17,13 @@ if(isset($_SESSION['email'])){
 		  <div class="container">
 		    <div class="collapse navbar-collapse" id="myNavbar">
 			    <ul class="nav navbar-nav navbar-right">
-			      <li><a href="account-settings.php"><span class="glyphicon glyphicon-user"></span> Settings </a></li>
-			      <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 			    </ul>
 			    <a class="navbar-brand" href="#">Our Logo</a>
 			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
 				<ul class="nav navbar-nav banner-home">
-				    <li class="active"><a href="logged-in-home.php">Home</a></li>
+				    <li class="active"><a href="index.php">Home</a></li>
 				      <!--<li><a href="#">About</a></li>-->
 				</ul>  
 		    </div>
@@ -64,30 +50,20 @@ if(isset($_SESSION['email'])){
 				</form>
 		    </div>
 		    <div class="col-lg-10 text-left"> 
-		    	<div class="change-settings">
-		    	<h2> <b> My Account </b></h2>
-				<form action="change-settings.php" method = "post">
-					<br>Email Address: <?php echo $email;?> <br>
-					User Type: <?php echo $usertype;?> <br>
-					<br>
-					First Name:<br>
-					<input type="text" name="new-fname" placeholder=<?php echo $_SESSION['fname'];?>>
-					<br>
-					Last Name:<br>
-					<input type="text" name="new-lname" placeholder=<?php echo $_SESSION['lname'];?>>
-					<br>
-					Enter your current password:<br>
-					<input type="password" name="current-password">
-					<br>
-					New password:<br>
-					<input type="password" name="new-password">
-					<br>
-					Confirm your password:<br>
-					<input type="password" name="new-password-confirm">
-					<br><br>
-					<input type="submit" value="Submit">
-				</form>
-				</div>
+		    		<h2> <b>Create An Account </b> </h2>
+                	<form action="registerprocess.php" method="post"> <br>
+						First Name:<input type="text" name="fname" /><br><br>
+						Last Name:<input type="text" name="lname" /><br><br>
+						Email: <input type="text" name="email" /><br><br>
+                    	Password: <input type="password" name="password" /><br><br>
+						Phone:<input type="text" name="pnumber" /><br><br> User Type: 
+						<select name = "usertype">
+  							<option value="student">Student</option>
+  							<option value="professor">Professor</option>
+  							<option value="tutor">Tutor</option>
+						</select>
+                    <br><br><button type="submit" class="btn btn-default">REGISTER</button>
+                  </form>
 		    </div>
 		  </div>
 		</div>

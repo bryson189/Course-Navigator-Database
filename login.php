@@ -54,7 +54,7 @@
 				<h2>Please enter your login information</h2>
 				<form action="studentlogin.php" method = "post">
 					Username:<br>
-					<input type="text" name="username" placeholder="@ucalgary.ca">
+					<input type="text" name="email" placeholder="@ucalgary.ca">
 					<br>
 					Password:<br>
 					<input type="password" name="password">
