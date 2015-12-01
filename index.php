@@ -17,7 +17,6 @@ if(isset($_SESSION['email'])){
 		<title>Course Navigator</title> 
 	</head> 
 	<body>
-
 		<header>
 			<h1> <b>Course Navigator </b></h1>
 		</header>
