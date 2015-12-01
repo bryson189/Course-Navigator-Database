@@ -32,19 +32,31 @@ if($_POST[email] == ''){
 }
 
 if($_POST[usertype] == 'student'){
-  $sql="INSERT INTO student (fname, lname, password, email, pnumber)
+  mysql_query("INSERT INTO student (fname, lname, email, pnumber)
   VALUES
-  ('$_POST[fname]','$_POST[lname]', '$_POST[password]', '$_POST[email]', '$_POST[pnumber]')";
+  ('$_POST[fname]','$_POST[lname]', '$_POST[email]', '$_POST[pnumber]')");
+
+  $sql="INSERT INTO login (email, password, usertype)
+  VALUES ('$_POST[email], $_POST[password], $_POST[usertype]')";
 }
 else if($_POST[usertype] == 'tutor'){
-  $sql="INSERT INTO tutor (fname, lname, password, email, pnumber)
+  mysql_query("INSERT INTO tutor (fname, lname, email, pnumber)
   VALUES
-  ('$_POST[fname]','$_POST[lname]', '$_POST[password]', '$_POST[email]', '$_POST[pnumber]')";
+  ('$_POST[fname]','$_POST[lname]', '$_POST[email]', '$_POST[pnumber]')");
+  $sql="INSERT INTO login (email, password, usertype)
+  VALUES ('$_POST[email], $_POST[password], $_POST[usertype]')";
 }
 else if($_POST[usertype] == 'professor'){
-  $sql="INSERT INTO professor (fname, lname, password, email, pnumber)
+  mysql_query("INSERT INTO professor (fname, lname, email, pnumber)
   VALUES
-  ('$_POST[fname]','$_POST[lname]', '$_POST[password]', '$_POST[email]', '$_POST[pnumber]')";
+  ('$_POST[fname]','$_POST[lname]', '$_POST[email]', '$_POST[pnumber]')");
+  $sql="INSERT INTO login (email, password, usertype)
+  VALUES ('$_POST[email], $_POST[password], $_POST[usertype]')";
+}
+if (!mysql_query($sql))
+{
+  die('Error: ' . mysql_error());
+
 }
 mysql_close($connection);
 ?>
