@@ -86,7 +86,7 @@
 									<tbody>
 										<tr>
 											<td class = "data-head"> Name: <td>';
-					echo '<td>'.$row[0].', '.$row[2].'th ed.</td>';
+					echo '<td>'.$row[0].', '.$row[2].'th edition</td>';
 					echo '</tr>
 										<tr>
 											<td class = "data-head"> Author(s): <td>';
@@ -106,13 +106,26 @@
 
 					$onlineretailers = mysql_query('SELECT url, price, domain FROM onlineretailers WHERE isbn = "'.$isbn.'"', $db);
 					echo '<tr>
-							<td class = "data-head"> Online Retailers: <td>
-							<td>';
+							<td class = "data-head"> Online Retailers: <td>';
+					echo '<td>';
 					while($retailer_rows = mysql_fetch_array($onlineretailers)){
-						echo $retailer_rows[0];
+						echo '<a href="'.$retailer_rows[0].'">'.$retailer_rows[2].': $'.$retailer_rows[1].'</a><br>';
 					}
-					echo'</td> 
-						</tr>';
+					//echo 'test';
+					echo'</td> </tr>';
+
+
+					echo '<tr>
+							<td class = "data-head"> Course(s): <td>';
+					echo '<td>';
+					$courses = mysql_query('SELECT deptcode, coursenum FROM requiredtextbooks WHERE isbn = "'.$isbn.'"', $db);
+					while($course_rows = mysql_fetch_array($courses)){
+						echo $course_rows[0].$course_rows[1].'<br>';
+					}
+					//echo 'test';
+					echo'</td> </tr>';
+
+
 					echo '</tbody></table></div></div></div>';
 					echo '<div class = "panel-footer"> 
 						<a href = "mailto:'.$email.'" type = "button" class = "btn profile-button btn-sm"> 
