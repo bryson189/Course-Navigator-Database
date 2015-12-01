@@ -34,13 +34,13 @@
 		  <div class="row content">
 		    <div class="col-lg-2 sidenav ">
 		    	<div class="btn-group-vertical" role="group">
-					<a href = "courses.html"><button  class="btn btn-default">
+					<a href = "courses.php"><button  class="btn btn-default">
 						<span class="glyphicon glyphicon-education"></span> Courses</button></a>
 					<a href = "professors.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-user" ></span> Professors</button></a>
 					<a href = "textbook.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-book" ></span> Textbooks</button></a>
-					<a href = "tutors.html"><button class="btn btn-default">
+					<a href = "tutors.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-blackboard" ></span> Tutors</button></a>
 				</div>
 				<div class="side-search">
@@ -52,7 +52,7 @@
 		    <div class="col-lg-10 text-left"> 
 
 		    	<?php 
-					$db = mysql_connect("localhost","root","default");
+					$db = @mysql_connect("localhost","root","default");
 					if(!$db){
 						die("MySQL connection error. " . mysql_error());
 					}
