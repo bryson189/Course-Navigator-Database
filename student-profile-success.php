@@ -5,6 +5,14 @@ session_start();
 if(isset($_SESSION['email'])){
 	$email = $_SESSION['email'];
 	$usertype = $_SESSION['usertype'];
+	if ($usertype == 'Professor')
+	{
+		header('Location: professor-profile.php');
+	}
+	else if ($usertype == 'Tutor')
+	{
+		header('Location: tutor-profile.php');
+	}	
 } else{
 	header('Location: index.php');
 	die();
@@ -22,7 +30,6 @@ if(isset($_SESSION['email'])){
 		<title>Course Navigator</title> 
 	</head> 
 	<body>
-
 		<header>
 			<h1> <b>Course Navigator </b></h1>
 		</header>
@@ -67,6 +74,7 @@ if(isset($_SESSION['email'])){
 		    	<div class="change-settings">
 		    	<h2> <b> My Account </b></h2>
  				<form action = "change-settings.php" method = "post" class="form-horizontal">
+					<font size = "5"> <font color="green"><div class = "glyphicon glyphicon-ok"> </div> Your settings have been changed successfuly.</font> </font>
 					<br><font size="3"><strong>Email Address: <?php echo $email;?> <br>
 					User Type: <?php echo $usertype;?> <br>
 					<br> </strong></font>
@@ -106,63 +114,7 @@ if(isset($_SESSION['email'])){
 				    </div>
 				  </div>
 				</form>  
-
-		    	<div class="change-settings">
-		    	<h2> <b> My Profile Settings</b></h2>
-				<form action="upload-picture.php" method="post" enctype="multipart/form-data">
-				  <div class="col-xs-6 col-md-3">
-				    <a class="thumbnail">
-				      <img src="
-				      <?php require('connect.php');
-				$oldpassword = mysql_result(mysql_query("SELECT picture_location FROM `professor` WHERE email='$email';"), 0);
-				echo $oldpassword;?>" alt="profile picture" width="200" height="200" >
-				    </a>
-				  </div>
-				    <br> Upload a profile picture: <br><br>
-				    <input type="file" name="fileToUpload" id="fileToUpload"> <br>
-				    <input type="submit" value="Upload Image" name="submit">
-				</form>
-				<br><br><br><br><br><br><br><br><br>
- 				<form action = "update-profile.php" method = "post" class="form-horizontal">
-					<br>
-				  <div class="form-group">
-				    <label for="inputname" class="col-sm-2 control-label">Profile Information</label>
-				    <div class="col-sm-4">
-					  <textarea class="form-control" name = "information" rows="5"><?php require('connect.php'); $info = mysql_result(mysql_query("SELECT information FROM `professor` WHERE email='$email';"), 0);
-				echo $info;?></textarea>
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="inputname" class="col-sm-2 control-label">Courses Teaching</label>
-				    <div class="col-sm-4">
-					  <textarea class="form-control" name = "courses" rows="3"><?php require('connect.php');
-				$course = mysql_result(mysql_query("SELECT courses FROM `professor` WHERE email='$email';"), 0);
-				echo $course;?></textarea></textarea>
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="inputname" class="col-sm-2 control-label">Hours</label>
-				    <div class="col-sm-4">
-				      <input type="text" name = "hours" class="form-control" value = "<?php require('connect.php');
-				$hrs = mysql_result(mysql_query("SELECT hours FROM `professor` WHERE email='$email';"), 0);
-				echo $hrs;?>">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="inputPassword3" class="col-sm-2 control-label">Contact Number</label>
-				    <div class="col-sm-4">
-				      <input type="tel" name = "pnumber" class="form-control" value = "<?php require('connect.php');
-				$cnum = mysql_result(mysql_query("SELECT pnumber FROM `professor` WHERE email='$email';"), 0);
-				echo $cnum;?>">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <div class="col-sm-offset-2 col-sm-10">
-				      <button type="submit" value = "Submit" class="btn btn-default">Submit</button>
-				    </div>
-				  </div>
-				</form>  
-			</div>
+				</div>
 		    </div>
 		  </div>
 		</div>

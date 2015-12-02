@@ -18,9 +18,12 @@ require('connect.php');
  	mysql_query("UPDATE professor SET  information='$information' WHERE email = '$email';");
  	mysql_query("UPDATE professor SET  courses='$courses' WHERE email = '$email';");
  	mysql_query("UPDATE professor SET  pnumber='$pnumber' WHERE email = '$email';");
- 	mysql_query("UPDATE professor SET  hours='$hours' WHERE email = '$email';");
+ 	header('Location: professor-profile-success.php');
 }
-else{
-
+else{	
+ 	mysql_query("UPDATE tutor SET  information='$information' WHERE email = '$email';");
+ 	mysql_query("UPDATE tutor SET  courses='$courses' WHERE email = '$email';");
+ 	mysql_query("UPDATE tutor SET  pnumber='$pnumber' WHERE email = '$email';");
+ 	header('Location: tutor-profile-success.php');
 }
 ?>

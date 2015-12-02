@@ -28,13 +28,15 @@ $oldpassword = mysql_result(mysql_query("SELECT password FROM `login` WHERE emai
  if ( $_SESSION['usertype'] == 'Student')
  {
 		mysql_query("UPDATE student SET fname='$fname', lname='$lname' WHERE email = '$email';");
+ 		header('Location: student-profile-success.php');
  }
  else if ( $_SESSION['usertype'] == 'Professor')
  {
 		mysql_query("UPDATE professor SET fname='$fname', lname='$lname' WHERE email = '$email';");
+ 		header('Location: professor-profile-success.php');
  }
  else
  {
 		mysql_query("UPDATE tutor SET fname='$fname', lname='$lname' WHERE email = '$email';");
- }
+ 		header('Location: tutor-profile-success.php');
 ?>

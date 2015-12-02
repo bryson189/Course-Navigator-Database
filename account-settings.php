@@ -9,6 +9,10 @@ if(isset($_SESSION['email'])){
 	{
 		header('Location: professor-profile.php');
 	}
+	else if ($usertype == 'Tutor')
+	{
+		header('Location: tutor-profile.php');
+	}	
 } else{
 	header('Location: index.php');
 	die();
@@ -76,13 +80,13 @@ if(isset($_SESSION['email'])){
 				  <div class="form-group">
 				    <label for="inputname" class="col-sm-2 control-label">First Name</label>
 				    <div class="col-sm-4">
-				      <input type="text" name = "new-fname" class="form-control" placeholder=<?php echo $_SESSION['fname'];?> required>
+				      <input type="text" name = "new-fname" class="form-control" value="<?php echo $_SESSION['fname'];?>" required>
 				    </div>
 				  </div>
 				  <div class="form-group">
 				    <label for="inputname" class="col-sm-2 control-label">Last Name</label>
 				    <div class="col-sm-4">
-				      <input type="text" name = "new-lname" class="form-control" placeholder=<?php echo $_SESSION['lname'];?> required>
+				      <input type="text" name = "new-lname" class="form-control" value="<?php echo $_SESSION['lname'];?>" required>
 				    </div>
 				  </div>
 				  <div class="form-group">

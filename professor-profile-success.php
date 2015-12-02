@@ -67,6 +67,7 @@ if(isset($_SESSION['email'])){
 		    	<div class="change-settings">
 		    	<h2> <b> My Account </b></h2>
  				<form action = "change-settings.php" method = "post" class="form-horizontal">
+					<font size = "5"> <font color="green"><div class = "glyphicon glyphicon-ok"> </div> Your settings have been changed successfuly.</font> </font>
 					<br><font size="3"><strong>Email Address: <?php echo $email;?> <br>
 					User Type: <?php echo $usertype;?> <br>
 					<br> </strong></font>
