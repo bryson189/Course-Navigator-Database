@@ -2,31 +2,6 @@
 
   session_start();
   require('connect.php');
-
-  if($_POST[fname] == ''){
-    echo "empty first name";
-    die(mysql_error());
-  }
-
-  if($_POST[lname] == ''){
-    echo "empty last name";
-    die(mysql_error());
-  }
-
-  if($_POST[password] == ''){
-    echo "empty password";
-    die(mysql_error());
-  }
-
-  if($_POST[email] == ''){
-    echo "empty email";
-    die(mysql_error());
-  }
-
-  if($_POST[pnumber] == ''){
-    echo "empty phone number";
-    die(mysql_error());
-  }
   include 'functions.php';
   if (!(endsWith($_POST[email], '@ucalgary.ca')))
   {
