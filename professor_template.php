@@ -148,14 +148,7 @@
 						<a href = "mailto:'.$email.'" type = "button" class = "btn profile-button btn-sm"> 
 							<span class = "glyphicon glyphicon-envelope footer-icon"> </span>
 						</a>
-						<div class = "pull-right">
-							<a href = "edit.html" type = "button" class = "btn profile-button btn-sm">
-								<span class = "glyphicon glyphicon-edit footer-icon"> </span>
-							</a>
-							<a href = "delete.html" type = "button" class = "btn profile-button btn-sm">
-								<span class = "glyphicon glyphicon-remove footer-icon"> </span>
-							</a>
-						</div>
+
 					</div>
 				</div>
 			</div>';

@@ -91,10 +91,10 @@
 										<tr>
 											<td class = "data-head"> Author(s): <td>';
 
-					$authors = mysql_query('SELECT finit, lname FROM authors WHERE isbn = "'.$isbn.'"', $db);
+					$authors = mysql_query('SELECT name FROM authors WHERE isbn = "'.$isbn.'"', $db);
 					echo '<td>';
 					while($author_rows = mysql_fetch_array($authors)){
-						echo $author_rows[0].' '.$author_rows[1].'<br>';
+						echo $author_rows[0].'<br>';
 					}
 					echo '</td></tr>';
 
@@ -104,12 +104,15 @@
 					echo '<td>'.$isbn.'</td></tr>';
 
 
-					$onlineretailers = mysql_query('SELECT url, price, domain FROM onlineretailers WHERE isbn = "'.$isbn.'"', $db);
+					$onlineretailers = mysql_query('SELECT url, price FROM onlineretailers WHERE isbn = "'.$isbn.'"', $db);
 					echo '<tr>
 							<td class = "data-head"> Online Retailers: <td>';
 					echo '<td>';
+					$count=1;
 					while($retailer_rows = mysql_fetch_array($onlineretailers)){
-						echo '<a href="'.$retailer_rows[0].'">'.$retailer_rows[2].': $'.$retailer_rows[1].'</a><br>';
+			
+						echo '<a href="'.$retailer_rows[0].'">Link '.$count.': $'.$retailer_rows[1].'</a><br>';
+						$count++;
 					}
 					//echo 'test';
 					echo'</td> </tr>';
@@ -120,7 +123,7 @@
 					echo '<td>';
 					$courses = mysql_query('SELECT deptcode, coursenum FROM requiredtextbooks WHERE isbn = "'.$isbn.'"', $db);
 					while($course_rows = mysql_fetch_array($courses)){
-						echo $course_rows[0].$course_rows[1].'<br>';
+						echo $course_rows[0].' '.$course_rows[1].'<br>';
 					}
 					//echo 'test';
 					echo'</td> </tr>';
@@ -132,7 +135,7 @@
 							<span class = "glyphicon glyphicon-envelope footer-icon"> </span>
 						</a>
 						<div class = "pull-right">
-							<a href = "edit.html" type = "button" class = "btn profile-button btn-sm">
+							<a href = "edit_textbook.php?isbn='.$isbn.'" type = "button" class = "btn profile-button btn-sm">
 								<span class = "glyphicon glyphicon-edit footer-icon"> </span>
 							</a>
 							<a href = "delete.html" type = "button" class = "btn profile-button btn-sm">
@@ -144,6 +147,7 @@
 			</div>';
 
 
+				mysql_close();
 
 		    	?>
 
