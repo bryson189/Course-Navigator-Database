@@ -131,6 +131,15 @@
 			    			&nbsp&nbsp<a href="#Y_anchor">Y</a>&nbsp&nbsp
 			    			&nbsp&nbsp<a href="#Z_anchor">Z</a>&nbsp&nbsp';
 
+
+
+
+
+
+			    echo "<br><br><p>Don't see your textbook?
+			    <a href='add_textbook.php'>
+			    <button type='button' value='addtextbook' class=btn btn-default>Add a textbook</button></a></p>";
+
 			    	echo '<div class="prof_list">
 			    			<a name="A_anchor"></a>
 			    			<h3>A</h3>
