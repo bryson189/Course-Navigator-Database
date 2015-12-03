@@ -130,10 +130,8 @@
 
 
 					echo '</tbody></table></div></div></div>';
-					echo '<div class = "panel-footer"> 
-						<a href = "" type = "button" class = "btn profile-button btn-sm"> 
-							<span class = "glyphicon glyphicon-envelope footer-icon"> </span>
-						</a>
+					echo '<div class = "panel-footer" id="textbook-template-bottom"> 
+			
 						<div class = "pull-right">
 							<a href = "edit_textbook.php?isbn='.$isbn.'" type = "button" class = "btn profile-button btn-sm">
 								<span class = "glyphicon glyphicon-edit footer-icon"> </span>

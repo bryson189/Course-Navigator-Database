@@ -146,6 +146,10 @@
 		background-color: #c9d8c5;
     height:100%;
 	}
+
+  #textbook-template-bottom{
+    height:50px;
+  }
 	
 	.profile-button {
 		
