@@ -135,9 +135,7 @@ if(isset($_SESSION['email'])){
 				  <div class="form-group">
 				    <label for="inputname" class="col-sm-2 control-label">Courses Teaching</label>
 				    <div class="col-sm-4">
-					  <textarea class="form-control" name = "courses" rows="3"><?php require('connect.php');
-				$course = mysql_result(mysql_query("SELECT courses FROM `professor` WHERE email='$email';"), 0);
-				echo $course;?></textarea></textarea>
+					  <textarea class="form-control" name = "courses" rows="3" placeholder = "Please enter each course in a new line."></textarea></textarea>
 				    </div>
 				  </div>
 				  <div class="form-group">

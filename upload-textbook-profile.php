@@ -3,8 +3,15 @@
     session_start();
     require('connect.php');
 
-    $sql="INSERT INTO textbook (name, editionnum, isbn, courses)
-    VALUES ('$_POST[name]', '$_POST[editionnum]', '$_POST[isbn]', '$_POST[courses]')";
+    $sql="INSERT INTO textbook (name, editionnum, isbn)
+    VALUES ('$_POST[name]', '$_POST[editionnum]', '$_POST[isbn]')";
+    if (!mysql_query($sql)) {
+    die('Error: ' . mysql_error());
+    }
+    
+    //FOR LOOP AND PARSE REQUIRED
+    $sql="INSERT INTO requiredtextbooks (textbookname, coursenum, deptcode, isbn)
+    VALUES ('$_POST[name]', $coursenum, $deptcode, '$isbn')";
     if (!mysql_query($sql)) {
     die('Error: ' . mysql_error());
     }

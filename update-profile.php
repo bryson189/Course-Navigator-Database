@@ -16,14 +16,38 @@ require('connect.php');
  {
  	$hours=$_POST['hours'];
  	mysql_query("UPDATE professor SET  information='$information' WHERE email = '$email';");
- 	mysql_query("UPDATE professor SET  courses='$courses' WHERE email = '$email';");
  	mysql_query("UPDATE professor SET  pnumber='$pnumber' WHERE email = '$email';");
+ 	
+ 	mysql_query("DELETE from teaches WHERE profemail='$email'");
+ 	$split = explode(PHP_EOL, $courses);
+ 	$elements = count($split);
+ 	for($i = 0; $i < $elements; $i++)
+ 	{
+ 		$split_2 = explode(' ', $split[$i]);
+	    mysql_query("INSERT INTO teaches (profemail, deptcode, coursenum)
+	    VALUES ('$email', '$split_2[0]', '$split_2[1]')");
+ 	}
+
  	header('Location: professor-profile-success.php');
 }
 else{	
+	$experience=$_POST['experience'];
  	mysql_query("UPDATE tutor SET  information='$information' WHERE email = '$email';");
- 	mysql_query("UPDATE tutor SET  courses='$courses' WHERE email = '$email';");
  	mysql_query("UPDATE tutor SET  pnumber='$pnumber' WHERE email = '$email';");
+ 	mysql_query("UPDATE tutor SET  experience='$experience' WHERE email = '$email';");
+
+ 	mysql_query("DELETE from tutorteaches WHERE tutoremail='$email'");
+ 	$split = explode(PHP_EOL, $courses);
+ 	$elements = count($split);
+ 	for($i = 0; $i < $elements; $i++)
+ 	{
+ 		$split_2 = explode(' ', $split[$i]);
+	    mysql_query("INSERT INTO tutorteaches (tutoremail, deptcode, coursenum)
+	    VALUES ('$email', '$split_2[0]', '$split_2[1]')");
+ 	}
+
+ 	header('Location: professor-profile-success.php');
+
  	header('Location: tutor-profile-success.php');
 }
 ?>
