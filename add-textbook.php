@@ -70,12 +70,13 @@
 			</nav>
 
 		</footer>
+		
 <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog " role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add a textbook</h4>
+        <h4 class="modal-title" id="myModalLabel"> <strong> Add a textbook </strong></h4>
       </div>
       <div class="modal-body">
  				<form action = "upload-textbook-profile.php" method = "post" class="form-horizontal" enctype="multipart/form-data">
@@ -113,7 +114,7 @@
 				  </div>
 				  <div class="form-group">
 				    <div class="col-sm-offset-2 col-sm-10">
-				      <button type="submit" value = "Submit" class="btn btn-primary">Submit</button>
+				      <button type="submit" value = "Submit" class="btn btn-primary"><strong>Submit </strong></button>
 				    </div>
 				  </div>
 				</form>  
