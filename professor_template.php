@@ -38,7 +38,7 @@
 						<span class="glyphicon glyphicon-education"></span> Courses</button></a>
 					<a href = "professors.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-user" ></span> Professors</button></a>
-					<a href = "textbook.php"><button class="btn btn-default">
+					<a href = "textbooks.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-book" ></span> Textbooks</button></a>
 					<a href = "tutors.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-blackboard" ></span> Tutors</button></a>
@@ -104,7 +104,11 @@
 								<div class="panel-body"> 
 									<div class ="row">
 										<div class = "col-md-5"> ';
-					echo '<img src = "assets/images/'.$row[0].$row[1].'.jpg" class = "img-thumbnail" width="350" height="350"></div>';
+					
+
+					$picture_location=mysql_result(mysql_query("SELECT picture_location FROM professor WHERE email='$email'"), 0);
+
+					echo '<img src = "'.$picture_location.'" class = "img-thumbnail" width="350" height="350"></div>';
 					echo '<div class = "col-md-6">
 								<table class = "table table-user-information">
 									<tbody>
