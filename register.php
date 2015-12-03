@@ -73,7 +73,7 @@
 				  <div class="form-group">
 				    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
 				    <div class="col-sm-4">
-				      <input type="password" name = "password" class="form-control"  required>
+				      <input type="password" name = "password" pattern=".{6,}" required title="Minimum of 6 characters"class="form-control"  required>
 				    </div>
 				  </div>
 				  <div class="form-group">

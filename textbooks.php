@@ -409,7 +409,7 @@
 				  <div class="form-group">
 				    <label for="inputname" class="col-sm-2 control-label">ISBN</label>
 				    <div class="col-sm-10">
-				      <input type="number" name = "isbn" class="form-control" required>
+	      			<input type="tel" name = "isbn" pattern=".{14,}" required title="This should be 14 characters long (Separated by '-')" class="form-control" required>
 				    </div>
 				  </div>
 				  <div class="form-group">
