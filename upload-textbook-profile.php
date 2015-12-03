@@ -2,6 +2,13 @@
 //script based off w3schools tutorial at http://www.w3schools.com/php/php_file_upload.asp
     session_start();
     require('connect.php');
+
+    $sql="INSERT INTO textbook (name, editionnum, isbn, courses)
+    VALUES ('$_POST[name]', '$_POST[editionnum]', '$_POST[isbn]', '$_POST[courses]')";
+    if (!mysql_query($sql)) {
+    die('Error: ' . mysql_error());
+    }
+
     $target_dir = "assets/uploads/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $success = 1;
@@ -19,7 +26,7 @@
     }
     // Check if file already exists
     if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
+        // echo "Sorry, file already exists.";
         $success = 1;
     }
     // Check file size
@@ -39,15 +46,9 @@
     // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-            $email = $_SESSION['email'];
-            if ($_SESSION['usertype'] == 'Professor'){
-            mysql_query("UPDATE professor SET picture_location = '$target_file' WHERE email = '$email';");
-            }
-            else{
-            mysql_query("UPDATE tutor SET picture_location ='$target_file' WHERE email = '$email';");   
-            }
-            header('Location: account-settings.php');
+            $isbn = $_POST['isbn'];
+            mysql_query("UPDATE textbook SET picture_location = '$target_file' WHERE isbn = '$isbn';");
+            //header('Location: account-settings.php');
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
