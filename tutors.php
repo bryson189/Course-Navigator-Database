@@ -50,6 +50,24 @@
 				</form>
 		    </div>
 			
+			
+			
+			<?php
+				$db = @mysql_connect("localhost", "root", "default");
+				if (!$db) {
+					die("MySQL connection error. " .mysql_error());
+				}
+				$db_select = mysql_select_db("course_navigator", $db);
+				if (!$db_select) {
+					die("Something went wrong with the query." .mysql_error());
+				}
+				
+				$email = $_GET['email'];
+				
+				$result = mysql_query('SELECT fname, lname, experience FROM tutor WHERE contactemail = "'.$email.'"',$db);
+				$row = mysql_fetch_object($result);
+			?>
+			
 	
 			<div class = "col-md-9 toppad">
 				<div class="panel panel-default">
