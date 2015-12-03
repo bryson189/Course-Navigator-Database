@@ -49,8 +49,7 @@
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 100%;
-     min-height: 750px;}
+    .row.content {height: 750px}
     
     /* Set gray background color and 100% height */
     .sidenav {
@@ -80,7 +79,6 @@
         height:auto;
       } 
     }
-
 
     .row .content{
       height:auto;
@@ -117,9 +115,55 @@
     }
     footer a{
       margin-left:10px;
+    }	
+	
+	.toppad {
+		margin-top: 40px;
+	}
+	
+	.panel > .panel-heading {
+		
+		color: white;
+		background-color: #c9d8c5;
+		font-size: 30px;
+		font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+		
+	}
+
+	.table-user-information > tbody > tr:first-child {
+		border-top: 0;
+	}
+	
+	.table-user-information > tbody > tr > td {
+		border-top: 0;
+	}
+	
+	.data-head{
+		font-weight: bold;
+	}
+	
+	.panel-footer {
+		background-color: #c9d8c5;
+	}
+	
+	.profile-button {
+		
+		background-color: #a8b6bf;
+		
+	}
+	
+	.footer-icon {
+		
+		color: white;
+		
+	}
+	
+    .prof_content{
+      padding:20px;
+      overflow:hidden;
     }
 
-    .loginmain{
-      padding-left:20px;
-      padding-top:10px;
+    .prof_content img{
+      float:left;
     }
+
