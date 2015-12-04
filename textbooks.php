@@ -73,7 +73,7 @@ if(isset($_SESSION['email'])){
 			    <h1>Textbooks</h1>
 
 			    <?php 
-					$db = mysql_connect("localhost","root","default");
+					$db = @mysql_connect("localhost","root","default");
 					if(!$db){
 						die("MySQL connection error. " . mysql_error());
 					}

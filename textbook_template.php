@@ -72,7 +72,7 @@ if(isset($_SESSION['email'])){
 
 
 		    	<?php
-		    		$db = mysql_connect("localhost","root","default");
+		    		$db = @mysql_connect("localhost","root","default");
 					if(!$db){
 						die("MySQL connection error. " . mysql_error());
 					}
@@ -146,13 +146,13 @@ if(isset($_SESSION['email'])){
 					echo'</td> </tr>';
 
 
+
 					echo '</tbody></table></div></div></div>';
 					echo '<div class = "panel-footer" id="textbook-template-bottom"> 
 
 					</div>
 				</div>
 			</div>';
-
 
 				mysql_close();
 
