@@ -116,7 +116,7 @@ if(isset($_SESSION['email'])){
 				    <a class="thumbnail">
 				      <img src="
 				      <?php require('connect.php');
-				$oldpassword = mysql_result(mysql_query("SELECT picture_location FROM `tutor` WHERE email='$email';"), 0);
+				$oldpassword =@mysql_result(mysql_query("SELECT picture_location FROM `tutor` WHERE email='$email';"), 0);
 				echo $oldpassword;?>" alt="profile picture" width="200" height="200" >
 				    </a>
 				  </div>

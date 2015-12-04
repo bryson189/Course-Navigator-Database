@@ -1,27 +1,4 @@
-    /*
-    #search
-    {
-        height: 15px;
-        width: 420px;
-       
-    }
-    
-    .jumbotron #searchbar{
 
-    	background-color: #eaf8fc;
-        background-image: linear-gradient(#fff, #d4e8ec);    
-        border-width: 1px;
-        border-style: solid;
-        border-color: #c4d9df #a4c3ca #83afb7;            
-        width: 500px;
-        height: 20px;
-        padding: 5px;
-        margin: 100px auto 50px;
-        overflow: hidden;
-    	position: relative;
-    	
-    }
-    */
     .jumbotron{
     	height: 500px;
     	width: auto;
