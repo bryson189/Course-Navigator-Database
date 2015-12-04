@@ -9,10 +9,10 @@ if(isset($_SESSION['email'])){
 	header('Location: account-not-activated.php');
 	session_destroy();
 	}
-	else{
-	header('Location: textbooks-logged-in.php');
-	}
-} 
+} else{
+	header('Location: index.php');
+	die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,13 +36,13 @@ if(isset($_SESSION['email'])){
 		  <div class="container">
 		    <div class="collapse navbar-collapse" id="myNavbar">
 			    <ul class="nav navbar-nav navbar-right">
-			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			      <li><a href="register.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+			      <li><a href="account-settings.php"><span class="glyphicon glyphicon-user"></span> Settings </a></li>
+			      <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 			    </ul>
 			    <a class="navbar-brand" href="#">Our Logo</a>
 			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
 				<ul class="nav navbar-nav banner-home">
-				    <li class="active"><a href="index.php">Home</a></li>
+				    <li class="active"><a href="logged-in-home.php">Home</a></li>
 				      <!--<li><a href="#">About</a></li>-->
 				</ul>  
 		    </div>
@@ -148,6 +148,15 @@ if(isset($_SESSION['email'])){
 			    			&nbsp&nbsp<a href="#X_anchor">X</a>&nbsp&nbsp
 			    			&nbsp&nbsp<a href="#Y_anchor">Y</a>&nbsp&nbsp
 			    			&nbsp&nbsp<a href="#Z_anchor">Z</a>&nbsp&nbsp';
+
+
+
+
+
+
+			    echo "<br><br>
+			    <button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModal'> 
+			    Add Textbook </button>";
 
 			    	echo '<div class="prof_list">
 			    			<a name="A_anchor"></a>
@@ -384,6 +393,67 @@ if(isset($_SESSION['email'])){
 				<a href="contactus.php">Contact Us</a>
 			</nav>
 		</footer>
+
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"> <strong> Add a textbook </strong></h4>
+      </div>
+      <div class="modal-body">
+ 				<form action = "upload-textbook-profile.php" method = "post" class="form-horizontal" enctype="multipart/form-data">
+				  <div class="col-xs-6 col-md-3">
+				    <a class="thumbnail">
+				      <img src="assets/images/default-book.png" alt="book picture" width="200" height="200" >
+				    </a>
+				  </div>
+				    <br> Upload a textbook picture: <br><br>
+				    <input type="file" name="fileToUpload" id="fileToUpload">
+				    <br><br><br><br>
+				  <div class="form-group">
+				    <label for="inputname" class="col-sm-2 control-label">Book Name</label>
+				    <div class="col-sm-10">
+					  <textarea class="form-control" name = "name" rows="2" required></textarea>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputname" class="col-sm-2 control-label">Courses </label>
+				    <div class="col-sm-10">
+					  <textarea class="form-control" name = "courses" rows="3"></textarea></textarea>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputname" class="col-sm-2 control-label">Authors </label>
+				    <div class="col-sm-10">
+					  <textarea class="form-control" name = "authors" rows="3"></textarea></textarea>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputname" class="col-sm-2 control-label">ISBN</label>
+				    <div class="col-sm-10">
+	      			<input type="tel" name = "isbn" pattern=".{14,}" required title="This should be 14 characters long (Separated by '-')" class="form-control" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputname" class="col-sm-2 control-label">Edition Number</label>
+				    <div class="col-sm-10">
+				      <input type="number" name = "editionnum" class="form-control" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" value = "Submit" class="btn btn-primary"><strong>Submit </strong></button>
+				    </div>
+				  </div>
+				</form>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 	</body> 
 
