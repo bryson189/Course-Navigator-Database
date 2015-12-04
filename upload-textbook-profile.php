@@ -8,12 +8,27 @@
     if (!mysql_query($sql)) {
     die('Error: ' . mysql_error());
     }
-    
-    //FOR LOOP AND PARSE REQUIRED
-    $sql="INSERT INTO requiredtextbooks (textbookname, coursenum, deptcode, isbn)
-    VALUES ('$_POST[name]', $coursenum, $deptcode, '$isbn')";
-    if (!mysql_query($sql)) {
-    die('Error: ' . mysql_error());
+
+    $isbn = $_POST['isbn'];
+    $name = $_POST['name'];
+    $authors = $_POST['authors'];
+    $courses = $_POST['courses'];
+    mysql_query("DELETE from requiredtextbooks WHERE isbn='$isbn'");
+    $split = explode(PHP_EOL, $courses);
+    $elements = count($split);
+    for($i = 0; $i < $elements; $i++)
+    {
+        $split_2 = explode(' ', $split[$i]);
+        mysql_query("INSERT INTO requiredtextbooks (textbookname, deptcode, coursenum, isbn)
+        VALUES ('$name', '$split_2[0]', '$split_2[1]', '$isbn')");
+    }
+    mysql_query("DELETE from authors WHERE isbn='$isbn'");
+    $split_author = explode(PHP_EOL, $authors);
+    $elements_author = count($split_author);
+    for($i = 0; $i < $elements_author; $i++)
+    {
+        mysql_query("INSERT INTO authors (name, isbn)
+        VALUES ('$split_author[$i]', '$isbn')");
     }
 
     $target_dir = "assets/uploads/";
@@ -41,6 +56,9 @@
         echo "Sorry, your file is too large.";
         $success = 0;
     }
+    if ($_FILES["fileToUpload"]["size"] == 0) {
+        header('Location: textbooks.php');
+    }
     // Allow certain file formats
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
@@ -55,7 +73,7 @@
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             $isbn = $_POST['isbn'];
             mysql_query("UPDATE textbook SET picture_location = '$target_file' WHERE isbn = '$isbn';");
-            //header('Location: account-settings.php');
+            header('Location: textbooks.php');
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
