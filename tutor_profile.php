@@ -63,8 +63,8 @@
 
 					$email = $_GET['email'];
 
-					$result = mysql_query(sprintf("SELECT fname, lname, contactphonenum, contactemail, rating, experience
-					FROM tutor WHERE contactemail = '%s' ", mysql_real_escape_string($email)));
+					$result = mysql_query(sprintf("SELECT fname, lname, pnumber, email, rating, experience
+					FROM tutor WHERE email = '%s' ", mysql_real_escape_string($email)));
 					$row = mysql_fetch_object($result);
 				?>
 
@@ -77,8 +77,9 @@
 										<div class = "col-md-5">
 
 					<?php
+
 					$picture_location = mysql_result(mysql_query(sprintf("SELECT picture_location FROM tutor
-					WHERE contactemail= '%s' ", mysql_real_escape_string($email))), 0);
+					WHERE email= '%s' ", mysql_real_escape_string($email))), 0);
 					?>
 
 						<img src = "<?php echo $picture_location; ?> " class = "img-thumbnail" width="350" height="350"></div>
@@ -115,12 +116,14 @@
 
 										<tr>
 											<td class = "data-head"> Phone No: </td>
-											<td><?php echo $row->contactphonenum; ?></td>
+
+											<td><?php echo $row->pnumber; ?></td>
 										</tr>
 
 										<tr>
 											<td class = "data-head"> Email: </td>
-											<td> <?php echo $row->contactemail; ?></td>
+
+											<td> <?php echo $row->email; ?></td>
 										</tr>
 
 									</tbody>
