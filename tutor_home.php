@@ -104,32 +104,31 @@
 				
 				?>
 
-				<a href="#A_anchor">A</a>
-			    <a href="#B_anchor">B</a>
-			    <a href="#C_anchor">C</a>
-			    <a href="#D_anchor">D</a>
-			    <a href="#E_anchor">E</a>
-			    <a href="#F_anchor">F</a>
-			    <a href="#G_anchor">G</a>
-			    <a href="#H_anchor">H</a>
-			    <a href="#I_anchor">I</a>
-			    <a href="#J_anchor">J</a>
-			    <a href="#K_anchor">K</a>
-			    <a href="#L_anchor">L</a>
-			    <a href="#M_anchor">M</a>
-			    <a href="#N_anchor">N</a>
-			    <a href="#O_anchor">O</a>
-			    <a href="#P_anchor">P</a>
-			    <a href="#Q_anchor">Q</a>
-			    <a href="#R_anchor">R</a>
-			    <a href="#S_anchor">S</a>
-			    <a href="#T_anchor">T</a>
-			    <a href="#U_anchor">U</a>
-			    <a href="#V_anchor">V</a>
-			    <a href="#W_anchor">W</a>
-			    <a href="#X_anchor">X</a>
-			    <a href="#Y_anchor">Y</a>
-			    <a href="#Z_anchor">Z</a>
+				&nbsp&nbsp<a href="#B_anchor">B</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#C_anchor">C</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#D_anchor">D</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#E_anchor">E</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#F_anchor">F</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#G_anchor">G</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#H_anchor">H</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#I_anchor">I</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#J_anchor">J</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#K_anchor">K</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#L_anchor">L</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#M_anchor">M</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#N_anchor">N</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#O_anchor">O</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#P_anchor">P</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#Q_anchor">Q</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#R_anchor">R</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#S_anchor">S</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#T_anchor">T</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#U_anchor">U</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#V_anchor">V</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#W_anchor">W</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#X_anchor">X</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#Y_anchor">Y</a>&nbsp&nbsp
+			    &nbsp&nbsp<a href="#Z_anchor">Z</a>&nbsp&nbsp
 				
 				
 			    <div class="tutor_list">
