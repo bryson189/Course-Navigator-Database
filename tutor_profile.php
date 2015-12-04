@@ -89,7 +89,7 @@
 									<tbody>
 										<tr>
 											<td class = "data-head"> Name: </td>
-											<td> <?php echo $row->fname . $row->lname; ?> </td>
+											<td> <?php echo $row->fname .' '. $row->lname; ?> </td>
 										</tr>
 										<tr>
 											<td class = "data-head"> Experience: </td>
@@ -110,10 +110,6 @@
 											</td>
 										</tr>
 
-										<tr>
-											<td class = "data-head"> Rating: </td>
-											<td><?php echo $row->rating; ?></td>
-										</tr>
 
 										<tr>
 											<td class = "data-head"> Phone No: </td>
