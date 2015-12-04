@@ -60,8 +60,9 @@ if(isset($_SESSION['email'])){
 		    <div class="col-lg-10 text-left">
 				<div class="jumbotron">
 				</div>
-			    <h1>Welcome</h1>
-			    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			    <h1>Welcome to Course Navigator</h1>
+			    <p>This project is created for our CPSC 471 class. 	
+				</p>
 		    </div>
 		  </div>
 		</div>
