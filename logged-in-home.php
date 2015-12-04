@@ -87,10 +87,11 @@ require('connect.php');
 						<span class="glyphicon glyphicon-blackboard" ></span> Tutors</button></a>
 				</div>
 				<div class="side-search">
-					<input type="text" class="form-control" placeholder="Search">
+				<form action = "search.php" method = "post" class="form-horizontal">
+					<input type="text" class="form-control" name="keyword" placeholder="Search">
 					<button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
+				</form>					
 				</div>
-				</form>
 		    </div>
 		    <div class="col-lg-10 text-left"> 
 		    	<div class="jumbotron">

@@ -49,10 +49,12 @@ if(isset($_SESSION['email'])){
 						<span class="glyphicon glyphicon-book" ></span> Textbooks</button></a>
 					<a href = "tutors"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-blackboard" ></span> Tutors</button></a>
-					<div class="side-search">
-						<input type="text" class="form-control" placeholder="Search">
-						<button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
-					</div>
+				<div class="side-search">
+				<form action = "search.php" method = "post" class="form-horizontal">
+					<input type="text" class="form-control" name="keyword" placeholder="Search">
+					<button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
+				</form>					
+				</div>
 				</div>
 		    </div>
 		    <div class="col-lg-10 text-left"> 

@@ -3,9 +3,6 @@
 session_start();
 require('connect.php');
 
-if(isset($_SESSION['email'])){
-	header('Location: logged-in-home.php');
-}
 ?>
 
 <!DOCTYPE html>
@@ -51,15 +48,14 @@ if(isset($_SESSION['email'])){
 					<a href = "tutors"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-blackboard" ></span> Tutors</button></a>
 					<div class="side-search">
-							<form action = "search.php" method = "post" class="form-horizontal">
+					<form action = "search.php" method = "post" class="form-horizontal">
 						<input type="text" class="form-control" name="keyword" placeholder="Search">
 						<button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
 					</form>
 					</div>
 				</div>
 		    </div>
-		    <div class="col-lg-10 text-left">
-
+		    <div class="col-lg-10 text-left"><br>
 					<div class="media">
 				<div class="media-left">
 					<a href="#">
@@ -67,7 +63,7 @@ if(isset($_SESSION['email'])){
 					</a>
 				</div>
 				<div class="media-body">
-					<h4 class="media-heading">Search Results for "<?php echo($_POST[keyword]);?>"</h4>
+					<h4 class="media-heading"><strong>Search Results for "<?php echo($_POST[keyword]);?>" </strong></h4>
 
 					<?php
 								if($_POST[keyword] == null)
@@ -86,12 +82,12 @@ if(isset($_SESSION['email'])){
 									if($row==0)
 										echo("No results in Professors<br>");
 									else {
-										echo ("<font size = 2><a href="."/professors.php?id=".$row[2].">".$row[0]." ".$row[1]." (Email: ".$row[2].")"."</a><br></font>");
+										echo ("<font size = 2><a href="."/professor_template.php?email=".$row[2].">".$row[0]." ".$row[1]." (Email: ".$row[2].")"."</a><br></font>");
 									}
 
 
 				          while($row = mysql_fetch_array($result)){
-				            echo ("<font size = 2><a href="."/professors.php?id=".$row[2].">".$row[0]." ".$row[1]." (Email: ".$row[2].")"."</a><br></font>");
+				            echo ("<font size = 2><a href="."/professor_template.php?email=".$row[2].">".$row[0]." ".$row[1]." (Email: ".$row[2].")"."</a><br></font>");
 				          }
 
 
@@ -127,12 +123,12 @@ if(isset($_SESSION['email'])){
 									if($row==0)
 										echo("No results in Tutors<br>");
 									else {
-											echo ("<font size = 2><a href="."/professors.php?id=".$row[2].">".$row[0]." ".$row[1]." (Email: ".$row[2].")"."</a><br></font>");
+											echo ("<font size = 2><a href="."/professor_template.php?email=".$row[2].">".$row[0]." ".$row[1]." (Email: ".$row[2].")"."</a><br></font>");
 										}
 
 
 				          while($row = mysql_fetch_array($result)){
-				          echo ("<font size = 2><a href="."/professors.php?id=".$row[2].">".$row[0]." ".$row[1]." (Email: ".$row[2].")"."</a><br></font>");
+				          echo ("<font size = 2><a href="."/professor_template.php?email=".$row[2].">".$row[0]." ".$row[1]." (Email: ".$row[2].")"."</a><br></font>");
 				          }
 
 
@@ -148,12 +144,12 @@ if(isset($_SESSION['email'])){
 									if($row==0)
 										echo("No results in Textbooks<br>");
 										else {
-											echo ("<font size = 2><a href="."/textbooks.php?id=".$row[0].">".$row[1]." (ISBN: ".$row[0].")"."</a><br></font>");
+											echo ("<font size = 2><a href="."/textbook_template.php?isbn=".$row[0].">".$row[1]." (ISBN: ".$row[0].")"."</a><br></font>");
 										}
 
 
 				          while($row = mysql_fetch_array($result)){
-				          	echo ("<font size = 2><a href="."/textbooks.php?id=".$row[0].">".$row[1]." (ISBN: ".$row[0].")"."</a><br></font>");
+				          	echo ("<font size = 2><a href="."/textbook_template.php?isbn=".$row[0].">".$row[1]." (ISBN: ".$row[0].")"."</a><br></font>");
 				          }
 }
 
