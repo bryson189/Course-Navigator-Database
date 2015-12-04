@@ -103,7 +103,7 @@
 				}
 				
 				?>
-				&nbsp&nbsp<a href="#A_anchor">B</a>&nbsp&nbsp
+				&nbsp&nbsp<a href="#A_anchor">A</a>&nbsp&nbsp
 				&nbsp&nbsp<a href="#B_anchor">B</a>&nbsp&nbsp
 			    &nbsp&nbsp<a href="#C_anchor">C</a>&nbsp&nbsp
 			    &nbsp&nbsp<a href="#D_anchor">D</a>&nbsp&nbsp
