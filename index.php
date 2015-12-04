@@ -14,8 +14,8 @@ if(isset($_SESSION['email'])){
   		<meta name="viewport" content="width=device-width, initial-scale=1">
    		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="assets/stylesheets/main.css">
-		<title>Course Navigator</title> 
-	</head> 
+		<title>Course Navigator</title>
+	</head>
 	<body>
 		<header>
 			<h1> <b>Course Navigator </b></h1>
@@ -32,12 +32,12 @@ if(isset($_SESSION['email'])){
 				<ul class="nav navbar-nav banner-home">
 				    <li class="active"><a href="index.php">Home</a></li>
 				      <!--<li><a href="#">About</a></li>-->
-				</ul>  
+				</ul>
 		    </div>
 		  </div>
 		</nav>
 
-		<div class="container">    
+		<div class="container">
 		  <div class="row content">
 		    <div class="col-lg-2 sidenav ">
 		    	<div class="btn-group-vertical" role="group">
@@ -50,12 +50,14 @@ if(isset($_SESSION['email'])){
 					<a href = "tutors"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-blackboard" ></span> Tutors</button></a>
 					<div class="side-search">
-						<input type="text" class="form-control" placeholder="Search">
+							<form action = "search.php" method = "post" class="form-horizontal">
+						<input type="text" class="form-control" name="keyword" placeholder="Search">
 						<button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
+					</form>
 					</div>
 				</div>
 		    </div>
-		    <div class="col-lg-10 text-left"> 
+		    <div class="col-lg-10 text-left">
 				<div class="jumbotron">
 				</div>
 			    <h1>Welcome</h1>
@@ -73,7 +75,7 @@ if(isset($_SESSION['email'])){
 			</nav>
 		</footer>
 
-	</body> 
+	</body>
 
-	
-</html> 
+
+</html>
