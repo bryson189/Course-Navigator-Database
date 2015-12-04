@@ -68,7 +68,6 @@
 					if(!$result){
 						die("Something went wrong with the query. " . mysql_error());
 					}
-<<<<<<< HEAD
 
 					$starts_a = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'A%'");
 					$starts_b = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'B%'");
@@ -96,8 +95,6 @@
 					$starts_x = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'X%'");
 					$starts_y = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'Y%'");
 					$starts_z = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'Z%'");
-
-=======
 	
 					$starts_a = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'A%'");
 					$starts_b = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'B%'");
@@ -126,7 +123,6 @@
 					$starts_y = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'Y%'");
 					$starts_z = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'Z%'");
 					
->>>>>>> 6b8fcd7545a593c06d03b68b85943840b55c0bbe
 					function generateEntries($letter)
 				{
 					while($row = mysql_fetch_array($letter)) {
