@@ -1,20 +1,3 @@
-<?php
-error_reporting(E_ALL & ~E_NOTICE);
-session_start();
-
-if(isset($_SESSION['email'])){
-  $email = $_SESSION['email'];
-  if ($_SESSION['activation_status']==0)
-  {
-  header('Location: account-not-activated.php');
-  session_destroy();
-  }
-  else{
-  $course = $_GET['course'];
-  header('Location: course_template-logged-in.php?course='.$course);
-  }
-}
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,22 +15,21 @@ if(isset($_SESSION['email'])){
             <h1><img src="/assets/images/title.jpg" style="width:345px;height:60px;"></</h1>
         </header>
 
-        <nav class="navbar navbar-inverse">
-          <div class="container">
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                  <li><a href="register.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
-                </ul>
-                <a class="navbar-brand" href="#"> <img src="/assets/images/logo.jpg" style="width:30px;height:30px;">  </a></a>
-                       <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
-                <ul class="nav navbar-nav banner-home">
-                    <li class="active"><a href="index.php">Home</a></li>
-                      <!--<li><a href="#">About</a></li>-->
-                </ul>
-            </div>
-          </div>
-        </nav>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="account-settings.php"><span class="glyphicon glyphicon-user"></span> Settings </a></li>
+            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          </ul>
+          <a class="navbar-brand" href="#"> <img src="/assets/images/logo.jpg" style="width:30px;height:30px;">  </a></a>
+                 <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
+        <ul class="nav navbar-nav banner-home">
+            <li class="active"><a href="logged-in-home.php">Home</a></li>
+        </ul>
+        </div>
+      </div>
+    </nav>
 
         <div class="container">
           <div class="row content">
@@ -62,12 +44,12 @@ if(isset($_SESSION['email'])){
                     <a href = "tutor_home.php"><button class="btn btn-default">
                         <span class="glyphicon glyphicon-blackboard" ></span> Tutors</button></a>
                 </div>
-        <div class="side-search">
-        <form action = "search.php" method = "post" class="form-horizontal">
-          <input type="text" class="form-control" name="keyword" placeholder="Search">
-          <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
-        </form>
-        </div>
+              <div class="side-search">
+              <form action = "search.php" method = "post" class="form-horizontal">
+                <input type="text" class="form-control" name="keyword" placeholder="Search">
+                <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
+              </form>
+              </div>
             </div>
             <div class="col-lg-10 text-left">
 
@@ -171,6 +153,11 @@ if(isset($_SESSION['email'])){
 
                             echo '</td>
                         </tr>';
+
+                       echo'
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          Rate </button>';
+
                     echo '</tbody></table></div></div></div>';
 
 
@@ -196,6 +183,33 @@ if(isset($_SESSION['email'])){
                 <a href="contactus.php">Contact Us</a>
             </nav>
         </footer>
+
+
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"> <strong> Rate this course </strong></h4>
+      </div>
+      <div class="modal-body">
+        <form action="ratecourse.php?course=<?php echo "$deptcode".'-'."$coursenum";?>" method="post">
+          <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <input type="submit">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     </body>
 

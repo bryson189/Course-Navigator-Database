@@ -9,10 +9,10 @@ if(isset($_SESSION['email'])){
 	header('Location: account-not-activated.php');
 	session_destroy();
 	}
-	else{
-	header('Location: courses-logged-in.php');
-	}
-} 
+} else{
+	header('Location: courses.php');
+	die();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,15 +33,13 @@ if(isset($_SESSION['email'])){
 		  <div class="container">
 		    <div class="collapse navbar-collapse" id="myNavbar">
 			    <ul class="nav navbar-nav navbar-right">
-			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+			      <li><a href="account-settings.php"><span class="glyphicon glyphicon-user"></span> Settings </a></li>
+			      <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 			    </ul>
-
 					<a class="navbar-brand" href="#"> <img src="/assets/images/logo.jpg" style="width:30px;height:30px;">  </a></a>
-
 			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
 				<ul class="nav navbar-nav banner-home">
-				    <li class="active"><a href="index.php">Home</a></li>
+				    <li class="active"><a href="logged-in-home.php">Home</a></li>
 				      <!--<li><a href="#">About</a></li>-->
 				</ul>
 		    </div>
