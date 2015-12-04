@@ -63,7 +63,7 @@ require('connect.php');
 					</a>
 				</div>
 				<div class="media-body">
-					<h4 class="media-heading"><strong>Search Results for "<?php echo($_POST[keyword]);?>" </strong></h4>
+					<h4 class="media-heading"><strong> <font size = "5"> Search Results for "<?php echo($_POST[keyword]);?>" </font></strong></h4>
 
 					<?php
 								if($_POST[keyword] == null)
