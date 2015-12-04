@@ -129,6 +129,7 @@
 					echo'</td> </tr>';
 
 
+
 					echo '</tbody></table></div></div></div>';
 					echo '<div class = "panel-footer" id="textbook-template-bottom"> 
 			
@@ -143,7 +144,6 @@
 					</div>
 				</div>
 			</div>';
-
 
 				mysql_close();
 
