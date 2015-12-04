@@ -123,7 +123,7 @@ if(isset($_SESSION['email'])){
 				    <input type="file" name="fileToUpload" id="fileToUpload"> <br>
 				    <input type="submit" value="Upload Image" name="submit">
 				</form>
-				<br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
  				<form action = "update-profile.php" method = "post" class="form-horizontal">
 					<br>
 				  <div class="form-group">
