@@ -45,7 +45,7 @@ require('connect.php');
 						<span class="glyphicon glyphicon-user" ></span> Professors</button></a>
 					<a href = "textbooks.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-book" ></span> Textbooks</button></a>
-					<a href = "tutors"><button class="btn btn-default">
+					<a href = "tutor_home.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-blackboard" ></span> Tutors</button></a>
 					<div class="side-search">
 					<form action = "search.php" method = "post" class="form-horizontal">

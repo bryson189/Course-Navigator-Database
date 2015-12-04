@@ -40,7 +40,7 @@
 						<span class="glyphicon glyphicon-user" ></span> Professors</button></a>
 					<a href = "textbooks.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-book" ></span> Textbooks</button></a>
-					<a href = "tutors.php"><button class="btn btn-default">
+					<a href = "tutor_home.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-blackboard" ></span> Tutors</button></a>
 				</div>
 				<div class="side-search">
@@ -54,7 +54,7 @@
 
 
 		    	<?php
-		    		$db = mysql_connect("localhost","root","default");
+		    		$db = @mysql_connect("localhost","root","default");
 					if(!$db){
 						die("MySQL connection error. " . mysql_error());
 					}
