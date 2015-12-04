@@ -10,7 +10,7 @@
     if(isset($_POST["submit"])) {
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".";
+//            echo "File is an image - " . $check["mime"] . ".";
             $success = 1;
         } else {
             echo "File is not an image.";
@@ -39,7 +39,7 @@
     // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+            //echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
             $email = $_SESSION['email'];
             if ($_SESSION['usertype'] == 'Professor'){
             mysql_query("UPDATE professor SET picture_location = '$target_file' WHERE email = '$email';");
