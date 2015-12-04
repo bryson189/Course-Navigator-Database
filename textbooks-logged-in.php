@@ -10,7 +10,7 @@ if(isset($_SESSION['email'])){
 	session_destroy();
 	}
 } else{
-	header('Location: index.php');
+	header('Location: textbooks.php');
 	die();
 }
 ?>
@@ -57,7 +57,7 @@ if(isset($_SESSION['email'])){
 						<span class="glyphicon glyphicon-education"></span> Courses</button></a>
 					<a href = "professors.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-user" ></span> Professors</button></a>
-					<a href = "textbook.php"><button class="btn btn-default">
+					<a href = "textbooks.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-book" ></span> Textbooks</button></a>
 					<a href = "tutors.php"><button class="btn btn-default">
 						<span class="glyphicon glyphicon-blackboard" ></span> Tutors</button></a>

@@ -85,10 +85,8 @@ if(isset($_SESSION['email'])){
 
 
 
-					$result = mysql_query('SELECT * FROM textbook WHERE isbn = "'.$isbn.'"', $db);
+					$result = mysql_query('SELECT name, picture_location, editionnum FROM textbook WHERE isbn = "'.$isbn.'"', $db);
 					$row = mysql_fetch_row($result);
-
-
 
 					echo '<div class = "col-md-9	 toppad">
 							<div class="panel panel-default">
@@ -97,7 +95,7 @@ if(isset($_SESSION['email'])){
 								<div class="panel-body"> 
 									<div class ="row">
 										<div class = "col-md-5"> ';
-					echo '<img src = "assets/images/'.$row[1].'.jpg" class = "img-thumbnail" width="350" height="350"></div>';
+					echo '<img src = "'.$row[1].'" class = "img-thumbnail" width="350" height="350"></div>';
 					echo '<div class = "col-md-6">
 								<table class = "table table-user-information">
 									<tbody>
