@@ -5,12 +5,12 @@
   		<meta name="viewport" content="width=device-width, initial-scale=1">
    		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="assets/stylesheets/main.css">
-		<title>Course Navigator</title> 
-	</head> 
+		<title>Course Navigator</title>
+	</head>
 	<body>
 
 		<header>
-			<h1> <b>Course Navigator </b></h1>
+			<h1><img src="/assets/images/title.jpg" style="width:345px;height:60px;"></</h1>
 		</header>
 
 		<nav class="navbar navbar-inverse">
@@ -20,17 +20,17 @@
 			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 			      <li><a href="register.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 			    </ul>
-			    <a class="navbar-brand" href="#">Our Logo</a>
+					<a class="navbar-brand" href="#"> <img src="/assets/images/logo.jpg" style="width:30px;height:30px;">  </a></a>
 			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
 				<ul class="nav navbar-nav banner-home">
 				    <li class="active"><a href="index.php">Home</a></li>
 				      <!--<li><a href="#">About</a></li>-->
-				</ul>  
+				</ul>
 		    </div>
 		  </div>
 		</nav>
 
-		<div class="container">    
+		<div class="container">
 		  <div class="row content">
 		    <div class="col-lg-2 sidenav ">
 		    	<div class="btn-group-vertical" role="group">
@@ -49,9 +49,9 @@
 				</div>
 				</form>
 		    </div>
-		    <div class="col-lg-10 text-left"> 
+		    <div class="col-lg-10 text-left">
 
-		    	<?php 
+		    	<?php
 					$db = @mysql_connect("localhost","root","default");
 					if(!$db){
 						die("MySQL connection error. " . mysql_error());
@@ -63,24 +63,24 @@
 
 					$email = $_GET['email'];
 
-					$result = mysql_query(sprintf("SELECT fname, lname, contactphonenum, contactemail, rating, experience 
+					$result = mysql_query(sprintf("SELECT fname, lname, contactphonenum, contactemail, rating, experience
 					FROM tutor WHERE contactemail = '%s' ", mysql_real_escape_string($email)));
 					$row = mysql_fetch_object($result);
 				?>
-				
+
 						<div class = "col-md-9	 toppad">
 							<div class="panel panel-default">
 								<div class="panel-heading"> Profile </div>
-					
-								<div class="panel-body"> 
+
+								<div class="panel-body">
 									<div class ="row">
-										<div class = "col-md-5"> 
-					
+										<div class = "col-md-5">
+
 					<?php
-					$picture_location = mysql_result(mysql_query(sprintf("SELECT picture_location FROM tutor 
+					$picture_location = mysql_result(mysql_query(sprintf("SELECT picture_location FROM tutor
 					WHERE contactemail= '%s' ", mysql_real_escape_string($email))), 0);
 					?>
-					
+
 						<img src = "<?php echo $picture_location; ?> " class = "img-thumbnail" width="350" height="350"></div>
 							<div class = "col-md-6">
 								<table class = "table table-user-information">
@@ -96,11 +96,11 @@
 										<tr>
 											<td class = "data-head"> Courses: </td>
 												<?php
-													$courses_taught = mysql_query(sprintf("SELECT deptcode, coursenum 
-													FROM tutorteaches WHERE tutoremail = '%s'", mysql_real_escape_string($email))); 
+													$courses_taught = mysql_query(sprintf("SELECT deptcode, coursenum
+													FROM tutorteaches WHERE tutoremail = '%s'", mysql_real_escape_string($email)));
 												?>
 											<td>
-												<?php 
+												<?php
 													while($courserow = mysql_fetch_object($courses_taught)){
 														echo $courserow->deptcode . $courserow->coursenum .'<br>';
 													}
@@ -110,17 +110,17 @@
 
 										<tr>
 											<td class = "data-head"> Rating: </td>
-											<td><?php echo $row->rating; ?></td> 
+											<td><?php echo $row->rating; ?></td>
 										</tr>
 
 										<tr>
 											<td class = "data-head"> Phone No: </td>
-											<td><?php echo $row->contactphonenum; ?></td> 
+											<td><?php echo $row->contactphonenum; ?></td>
 										</tr>
 
 										<tr>
 											<td class = "data-head"> Email: </td>
-											<td> <?php echo $row->contactemail; ?></td> 
+											<td> <?php echo $row->contactemail; ?></td>
 										</tr>
 
 									</tbody>
@@ -129,8 +129,8 @@
 						</div>
 					</div>
 
-					<div class = "panel-footer"> 
-						<a href = "mailto:<?php echo $email; ?>" type = "button" class = "btn profile-button btn-sm"> 
+					<div class = "panel-footer">
+						<a href = "mailto:<?php echo $email; ?>" type = "button" class = "btn profile-button btn-sm">
 							<span class = "glyphicon glyphicon-envelope footer-icon"></span>
 						</a>
 					</div>
@@ -149,7 +149,7 @@
 			</nav>
 		</footer>
 
-	</body> 
+	</body>
 
-	
-</html> 
+
+</html>

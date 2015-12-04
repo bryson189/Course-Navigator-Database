@@ -5,12 +5,12 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
    	<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="assets/stylesheets/main.css">
-		<title>Course Navigator</title> 
-	</head> 
+		<title>Course Navigator</title>
+	</head>
 	<body>
 
 		<header>
-			<h1> <b>Course Navigator </b></h1>
+			<h1><img src="/assets/images/title.jpg" style="width:345px;height:60px;"></</h1>
 		</header>
 
 		<nav class="navbar navbar-inverse">
@@ -20,17 +20,17 @@
 			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 			      <li><a href="register.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 			    </ul>
-			    <a class="navbar-brand" href="#">Our Logo</a>
+					<a class="navbar-brand" href="#"> <img src="/assets/images/logo.jpg" style="width:30px;height:30px;">  </a></a>
 			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
 				<ul class="nav navbar-nav banner-home">
 				    <li class="active"><a href="index.php">Home</a></li>
 				      <!--<li><a href="#">About</a></li>-->
-				</ul>  
+				</ul>
 		    </div>
 		  </div>
 		</nav>
 
-		<div class="container">    
+		<div class="container">
 		  <div class="row content">
 		    <div class="col-lg-2 sidenav ">
 		    	<div class="btn-group-vertical" role="group">
@@ -47,10 +47,10 @@
 				<form action = "search.php" method = "post" class="form-horizontal">
 					<input type="text" class="form-control" name="keyword" placeholder="Search">
 					<button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
-				</form>					
+				</form>
 				</div>
 		    </div>
-		    <div class="col-lg-10 text-left"> 
+		    <div class="col-lg-10 text-left">
 
 
 		    	<?php
@@ -82,7 +82,7 @@
 
 
 
-						<div class="col-lg-10 text-left"> 
+						<div class="col-lg-10 text-left">
 		    		<h2> <b>Edit Textbook </b> </h2>
 		    		<p>ISBN: <?php echo $isbn?><br><br><br>
 		    			<h3>General Information</h3>
@@ -118,7 +118,7 @@
 				  	//echo $numofauthors;
 				  	for($i=0;$i<$numofauthors;$i++){
 				  		$author_row=mysql_fetch_array($authors);
-				  		echo 
+				  		echo
 				  		'<div class="form-group">
 				    		<label for="inputname" class="col-sm-2 control-label">Author '.($i+1).'</label>
 				    		<div class="col-sm-4">
@@ -138,7 +138,7 @@
 				  	$numofretailers=mysql_num_rows($retailers);
 				  	for($i=0;$i<$numofretailers;$i++){
 				  		$retailers_row=mysql_fetch_array($retailers);
-				  		echo 
+				  		echo
 				  		'<div class="form-group">
 				    		<label for="inputname" class="col-sm-2 control-label">url '.($i+1).'</label>
 				    		<div class="col-sm-4">
@@ -169,7 +169,7 @@
 				  	//echo $numofauthors;
 				  	for($i=0;$i<$numofcourses;$i++){
 				  		$course_row=mysql_fetch_array($courses);
-				  		echo 
+				  		echo
 				  		'<div class="form-group">
 				    		<label for="inputname" class="col-sm-2 control-label">Course '.($i+1).'</label>
 				    		<div class="col-sm-2">
@@ -184,7 +184,7 @@
 				      <button type="submit" value = "Submit" class="btn btn-default">Save</button>
 				    </div>
 				  </div>
-				</form>  
+				</form>
 		    </div>
 
 
@@ -205,5 +205,5 @@
 				<a href="contactus.php">Contact Us</a>
 			</nav>
 		</footer>
-	</body> 
-</html> 
+	</body>
+</html>

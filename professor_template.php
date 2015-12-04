@@ -23,12 +23,12 @@ if(isset($_SESSION['email'])){
   		<meta name="viewport" content="width=device-width, initial-scale=1">
    		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="assets/stylesheets/main.css">
-		<title>Course Navigator</title> 
-	</head> 
+		<title>Course Navigator</title>
+	</head>
 	<body>
 
 		<header>
-			<h1> <b>Course Navigator </b></h1>
+			<h1><img src="/assets/images/title.jpg" style="width:345px;height:60px;"></</h1>
 		</header>
 
 		<nav class="navbar navbar-inverse">
@@ -38,17 +38,17 @@ if(isset($_SESSION['email'])){
 			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 			      <li><a href="register.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 			    </ul>
-			    <a class="navbar-brand" href="#">Our Logo</a>
+					<a class="navbar-brand" href="#"> <img src="/assets/images/logo.jpg" style="width:30px;height:30px;">  </a></a>
 			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
 				<ul class="nav navbar-nav banner-home">
 				    <li class="active"><a href="index.php">Home</a></li>
 				      <!--<li><a href="#">About</a></li>-->
-				</ul>  
+				</ul>
 		    </div>
 		  </div>
 		</nav>
 
-		<div class="container">    
+		<div class="container">
 		  <div class="row content">
 		    <div class="col-lg-2 sidenav ">
 		    	<div class="btn-group-vertical" role="group">
@@ -65,12 +65,12 @@ if(isset($_SESSION['email'])){
 				<form action = "search.php" method = "post" class="form-horizontal">
 					<input type="text" class="form-control" name="keyword" placeholder="Search">
 					<button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
-				</form>					
+				</form>
 				</div>
 		    </div>
-		    <div class="col-lg-10 text-left"> 
+		    <div class="col-lg-10 text-left">
 
-		    	<?php 
+		    	<?php
 					$db = @mysql_connect("localhost","root","default");
 					if(!$db){
 						die("MySQL connection error. " . mysql_error());
@@ -119,11 +119,11 @@ if(isset($_SESSION['email'])){
 					echo '<div class = "col-md-9	 toppad">
 							<div class="panel panel-default">
 								<div class="panel-heading"> Profile </div>
-					
-								<div class="panel-body"> 
+
+								<div class="panel-body">
 									<div class ="row">
 										<div class = "col-md-5"> ';
-					
+
 
 					$picture_location=mysql_result(mysql_query("SELECT picture_location FROM professor WHERE email='$email'"), 0);
 
@@ -151,24 +151,24 @@ if(isset($_SESSION['email'])){
 
 					echo '<tr>
 							<td class = "data-head"> Hours: <td>
-							<td>'.$row[5].'</td> 
+							<td>'.$row[5].'</td>
 						</tr>';
 
 					echo '<tr>
 							<td class = "data-head"> Phone No: <td>
-							<td>'.$row[3].'</td> 
+							<td>'.$row[3].'</td>
 						</tr>';
 
 					echo '<tr>
 							<td class = "data-head"> Email: <td>
-							<td>'.$row[2].' </td> 
+							<td>'.$row[2].' </td>
 						</tr>';
 
 					echo '</tbody></table></div></div></div>';
 
 
-					echo '<div class = "panel-footer"> 
-						<a href = "mailto:'.$email.'" type = "button" class = "btn profile-button btn-sm"> 
+					echo '<div class = "panel-footer">
+						<a href = "mailto:'.$email.'" type = "button" class = "btn profile-button btn-sm">
 							<span class = "glyphicon glyphicon-envelope footer-icon"> </span>
 						</a>
 
@@ -180,50 +180,50 @@ if(isset($_SESSION['email'])){
 
 
 
-									
+
 
 
 					/*
 <div class = "col-md-9 toppad">
 				<div class="panel panel-default">
 					<div class="panel-heading"> Profile </div>
-					
-					<div class="panel-body"> 
+
+					<div class="panel-body">
 						<div class ="row">
-							<div class = "col-md-5"> 
-								<img src = "assets/images/bryson.jpg" class = "img-thumbnail" width="350" height="350"> 
+							<div class = "col-md-5">
+								<img src = "assets/images/bryson.jpg" class = "img-thumbnail" width="350" height="350">
 							</div>
-							
+
 							<div class = "col-md-5">
 								<table class = "table table-user-information">
 									<tbody>
 										<tr>
 											<td class = "data-head"> Name: <td>
-											<td> Brycin Ding </td> 
+											<td> Brycin Ding </td>
 										</tr>
 										<tr>
 											<td class = "data-head"> Courses: <td>
-											<td> CSGO 101 <br><br> CPSC 471 <br><br> Aesthetics 189 </td> 
+											<td> CSGO 101 <br><br> CPSC 471 <br><br> Aesthetics 189 </td>
 										</tr>
 										<tr>
 											<td class = "data-head"> Experience: <td>
-											<td> Masters in Software Engineering </td> 
+											<td> Masters in Software Engineering </td>
 										</tr>
 										<tr>
 											<td class = "data-head"> Phone Number: <td>
-											<td>  403-189-6969 </td> 
+											<td>  403-189-6969 </td>
 										</tr>
 										<tr>
 											<td class = "data-head"> Email: <td>
-											<td>brycin189@singapore.sg </td> 
+											<td>brycin189@singapore.sg </td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
 						</div>
 					</div>
-					<div class = "panel-footer"> 
-						<a href = "mailto:brycin189@gmail.com" type = "button" class = "btn profile-button btn-sm"> 
+					<div class = "panel-footer">
+						<a href = "mailto:brycin189@gmail.com" type = "button" class = "btn profile-button btn-sm">
 							<span class = "glyphicon glyphicon-envelope footer-icon"> </span>
 						</a>
 						<div class = "pull-right">
@@ -270,7 +270,7 @@ if(isset($_SESSION['email'])){
 			</nav>
 		</footer>
 
-	</body> 
+	</body>
 
-	
-</html> 
+
+</html>

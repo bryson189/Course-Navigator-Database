@@ -22,12 +22,12 @@ if(isset($_SESSION['email'])){
   		<meta name="viewport" content="width=device-width, initial-scale=1">
    		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="assets/stylesheets/main.css">
-		<title>Course Navigator</title> 
-	</head> 
+		<title>Course Navigator</title>
+	</head>
 	<body>
 
 		<header>
-			<h1> <b>Course Navigator </b></h1>
+			<h1><img src="/assets/images/title.jpg" style="width:345px;height:60px;"></</h1>
 		</header>
 
 		<nav class="navbar navbar-inverse">
@@ -37,17 +37,17 @@ if(isset($_SESSION['email'])){
 			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 			    </ul>
-			    <a class="navbar-brand" href="#">Our Logo</a>
+					<a class="navbar-brand" href="#"> <img src="/assets/images/logo.jpg" style="width:30px;height:30px;">  </a></a>
 			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
 				<ul class="nav navbar-nav banner-home">
 				    <li class="active"><a href="index.php">Home</a></li>
 				      <!--<li><a href="#">About</a></li>-->
-				</ul>  
+				</ul>
 		    </div>
 		  </div>
 		</nav>
 
-		<div class="container">    
+		<div class="container">
 		  <div class="row content">
 		    <div class="col-lg-2 sidenav ">
 		    	<div class="btn-group-vertical" role="group">
@@ -64,13 +64,13 @@ if(isset($_SESSION['email'])){
 				<form action = "search.php" method = "post" class="form-horizontal">
 					<input type="text" class="form-control" name="keyword" placeholder="Search">
 					<button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
-				</form>					
+				</form>
 				</div>
 		    </div>
-		    <div class="col-lg-10 text-left"> 
+		    <div class="col-lg-10 text-left">
 
 			    <h1>Professors</h1>
-			    
+
 			    <!--
 			    <a href="#A_anchor">A</a>
 			    <a href="#B_anchor">B</a>
@@ -99,9 +99,9 @@ if(isset($_SESSION['email'])){
 			    <a href="#Y_anchor">Y</a>
 			    <a href="#Z_anchor">Z</a>
 			    //-->
-			
 
-			    <?php 
+
+			    <?php
 					$db = @mysql_connect("localhost","root","default");
 					if(!$db){
 						die("MySQL connection error. " . mysql_error());
@@ -203,7 +203,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_b)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 			    echo '<a name="C_anchor"></a>
@@ -213,7 +213,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_c)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 
@@ -224,7 +224,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_d)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 
@@ -235,7 +235,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_e)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 
@@ -246,7 +246,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_f)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 			    echo '<a name="G_anchor"></a>
@@ -256,7 +256,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_g)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 			    echo '<a name="H_anchor"></a>
@@ -266,7 +266,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_h)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 			    echo '<a name="I_anchor"></a>
@@ -276,7 +276,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_i)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 			    echo '<a name="J_anchor"></a>
@@ -286,7 +286,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_j)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 			    echo '<a name="K_anchor"></a>
@@ -296,7 +296,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_k)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 			    echo '<a name="L_anchor"></a>
@@ -306,7 +306,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_l)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 
@@ -317,7 +317,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_m)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 			    echo '<a name="N_anchor"></a>
@@ -327,7 +327,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_n)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 			    echo '<a name="O_anchor"></a>
@@ -337,7 +337,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_o)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 			    echo '<a name="P_anchor"></a>
@@ -347,7 +347,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_p)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 
@@ -359,7 +359,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_q)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 
@@ -370,7 +370,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_r)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 
@@ -381,7 +381,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_s)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 
@@ -392,7 +392,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_t)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 			    echo '<a name="U_anchor"></a>
@@ -402,7 +402,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_u)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 
@@ -413,7 +413,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_v)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 
@@ -424,7 +424,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_w)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 
@@ -436,7 +436,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_x)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 
@@ -447,7 +447,7 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_y)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul>';
 
 
@@ -458,21 +458,21 @@ if(isset($_SESSION['email'])){
 			    while($row = mysql_fetch_array($starts_z)){
 					echo '<li><a href="professor_template.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 				}
-			    		
+
 			    echo '</ul></div>';
 
 
 
 			    ?>
 
-			    
+
 			    <!--
 			    <div class="prof_list">
 			    	<a name="A_anchor"></a>
 			    	<h3>A</h3>
 			    	<ul>
 			    		<li>test</li>
-			    		
+
 			    		<li>test</li>
 			    	</ul>
 
@@ -651,7 +651,7 @@ if(isset($_SESSION['email'])){
 			    		<li>test</li>
 			    	</ul>
 
-			    
+
 
 
 
@@ -671,12 +671,11 @@ if(isset($_SESSION['email'])){
 			</nav>
 		</footer>
 
-	</body> 
+	</body>
 
-	
-</html> 
+
+</html>
 
 <?php
-	
-?>
 
+?>

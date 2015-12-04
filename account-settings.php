@@ -12,7 +12,7 @@ if(isset($_SESSION['email'])){
 	else if ($usertype == 'Tutor')
 	{
 		header('Location: tutor-profile.php');
-	}	
+	}
 } else{
 	header('Location: index.php');
 	die();
@@ -27,11 +27,11 @@ if(isset($_SESSION['email'])){
   		<meta name="viewport" content="width=device-width, initial-scale=1">
    		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="assets/stylesheets/main.css">
-		<title>Course Navigator</title> 
-	</head> 
+		<title>Course Navigator</title>
+	</head>
 	<body>
 		<header>
-			<h1> <b>Course Navigator </b></h1>
+			<h1><img src="/assets/images/title.jpg" style="width:345px;height:60px;"></</h1>
 		</header>
 
 		<nav class="navbar navbar-inverse">
@@ -41,17 +41,17 @@ if(isset($_SESSION['email'])){
 			      <li><a href="account-settings.php"><span class="glyphicon glyphicon-user"></span> Settings </a></li>
 			      <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 			    </ul>
-			    <a class="navbar-brand" href="#">Our Logo</a>
+			  <a class="navbar-brand" href="#"> <img src="/assets/images/logo.jpg" style="width:30px;height:30px;">  </a></a>
 			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
 				<ul class="nav navbar-nav banner-home">
 				    <li class="active"><a href="logged-in-home.php">Home</a></li>
 				      <!--<li><a href="#">About</a></li>-->
-				</ul>  
+				</ul>
 		    </div>
 		  </div>
 		</nav>
 
-		<div class="container">    
+		<div class="container">
 		  <div class="row content">
 		    <div class="col-lg-2 sidenav ">
 		    	<div class="btn-group-vertical" role="group">
@@ -68,10 +68,10 @@ if(isset($_SESSION['email'])){
 				<form action = "search.php" method = "post" class="form-horizontal">
 					<input type="text" class="form-control" name="keyword" placeholder="Search">
 					<button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
-				</form>					
+				</form>
 				</div>
 		    </div>
-		    <div class="col-lg-10 text-left"> 
+		    <div class="col-lg-10 text-left">
 		    	<div class="change-settings">
 		    	<h2> <b> My Account </b></h2>
  				<form action = "change-settings.php" method = "post" class="form-horizontal">
@@ -113,7 +113,7 @@ if(isset($_SESSION['email'])){
 				      <button type="submit" value = "Submit" class="btn btn-default">Submit</button>
 				    </div>
 				  </div>
-				</form>  
+				</form>
 				</div>
 		    </div>
 		  </div>
@@ -128,7 +128,7 @@ if(isset($_SESSION['email'])){
 			</nav>
 		</footer>
 
-	</body> 
+	</body>
 
-	
-</html> 
+
+</html>

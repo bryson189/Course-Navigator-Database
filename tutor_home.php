@@ -5,12 +5,12 @@
   		<meta name="viewport" content="width=device-width, initial-scale=1">
    		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="assets/stylesheets/main.css">
-		<title>Course Navigator</title> 
-	</head> 
+		<title>Course Navigator</title>
+	</head>
 	<body>
 
 		<header>
-			<h1> <b>Course Navigator </b></h1>
+			<h1><img src="/assets/images/title.jpg" style="width:345px;height:60px;"></</h1>
 		</header>
 
 		<nav class="navbar navbar-inverse">
@@ -20,17 +20,18 @@
 			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 			      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 			    </ul>
-			    <a class="navbar-brand" href="#">Our Logo</a>
+					<a class="navbar-brand" href="#"> <img src="/assets/images/logo.jpg" style="width:30px;height:30px;">  </a></a>
+
 			           <!-- <img alt="Brand" src="assets/images/asd.jpg">-->
 				<ul class="nav navbar-nav banner-home">
 				    <li class="active"><a href="index.php">Home</a></li>
 				      <!--<li><a href="#">About</a></li>-->
-				</ul>  
+				</ul>
 		    </div>
 		  </div>
 		</nav>
 
-		<div class="container">    
+		<div class="container">
 		  <div class="row content">
 		    <div class="col-lg-2 sidenav ">
 		    	<div class="btn-group-vertical" role="group">
@@ -49,11 +50,11 @@
 				</div>
 				</form>
 		    </div>
-		    <div class="col-lg-10 text-left"> 
+		    <div class="col-lg-10 text-left">
 
 			    <h1>Tutors</h1>
-				
-			    <?php 
+
+			    <?php
 					$db = @mysql_connect("localhost","root","default");
 					if(!$db){
 						die("MySQL connection error. " . mysql_error());
@@ -67,7 +68,7 @@
 					if(!$result){
 						die("Something went wrong with the query. " . mysql_error());
 					}
-	
+
 					$starts_a = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'A%'");
 					$starts_b = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'B%'");
 					$starts_c = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'C%'");
@@ -94,14 +95,14 @@
 					$starts_x = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'X%'");
 					$starts_y = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'Y%'");
 					$starts_z = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'Z%'");
-					
+
 					function generateEntries($letter)
 				{
 					while($row = mysql_fetch_array($letter)) {
 						echo '<li><a href = "tutor_profile.php?email='.$row[2].'">'.$row[1].", ".$row[0]."</a></li>";
 					}
 				}
-				
+
 				?>
 				&nbsp&nbsp<a href="#A_anchor">A</a>&nbsp&nbsp
 				&nbsp&nbsp<a href="#B_anchor">B</a>&nbsp&nbsp
@@ -129,81 +130,81 @@
 			    &nbsp&nbsp<a href="#X_anchor">X</a>&nbsp&nbsp
 			    &nbsp&nbsp<a href="#Y_anchor">Y</a>&nbsp&nbsp
 			    &nbsp&nbsp<a href="#Z_anchor">Z</a>&nbsp&nbsp
-				
-				
+
+
 			    <div class="tutor_list">
 			    	<a name="A_anchor"></a>
 					<h3> A </h3>
 					<ul>
 					<?php generateEntries($starts_a); ?>
 					</ul>
-					
+
 					<a name="B_anchor"></a>
 					<h3> B </h3>
 					<ul>
 					<?php generateEntries($starts_b); ?>
 					</ul>
-					
+
 					<a name="C_anchor"></a>
 					<h3> C </h3>
 					<ul>
 					<?php generateEntries($starts_c); ?>
 					</ul>
-					
+
 					<a name="D_anchor"></a>
 					<h3> D </h3>
 					<ul>
 					<?php generateEntries($starts_d); ?>
 					</ul>
-					
+
 					<a name="E_anchor"></a>
 					<h3> E </h3>
 					<ul>
 					<?php generateEntries($starts_e); ?>
 					</ul>
-					
+
 					<a name="F_anchor"></a>
 					<h3> F </h3>
 					<ul>
 					<?php generateEntries($starts_f); ?>
 					</ul>
-					
+
 					<a name="G_anchor"></a>
 					<h3> G </h3>
 					<ul>
 					<?php generateEntries($starts_g); ?>
 					</ul>
-					
+
 					<a name="H_anchor"></a>
 					<h3> H </h3>
 					<ul>
 					<?php generateEntries($starts_h); ?>
 					</ul>
-					
+
 					<a name="I_anchor"></a>
 					<h3> I </h3>
 					<ul>
 					<?php generateEntries($starts_i); ?>
 					</ul>
-					
+
 					<a name="J_anchor"></a>
 					<h3> J </h3>
 					<ul>
 					<?php generateEntries($starts_j); ?>
 					</ul>
-					
+
 					<a name="K_anchor"></a>
 					<h3> K </h3>
 					<ul>
 					<?php generateEntries($starts_k); ?>
 					</ul>
-					
+
 					<a name="L_anchor"></a>
 					<h3> L </h3>
 					<ul>
 					<?php generateEntries($starts_l); ?>
 					</ul>
-					
+
 					<a name="M_anchor"></a>
 					<h3> M </h3>
 					<ul>
@@ -215,73 +216,73 @@
 					<ul>
 					<?php generateEntries($starts_n); ?>
 					</ul>
-					
+
 					<a name="O_anchor"></a>
 					<h3> O </h3>
 					<ul>
 					<?php generateEntries($starts_o); ?>
 					</ul>
-					
+
 					<a name="P_anchor"></a>
 					<h3> P </h3>
 					<ul>
 					<?php generateEntries($starts_p); ?>
 					</ul>
-					
+
 					<a name="Q_anchor"></a>
 					<h3> Q </h3>
 					<ul>
 					<?php generateEntries($starts_q); ?>
 					</ul>
-					
+
 					<a name="R_anchor"></a>
 					<h3> R </h3>
 					<ul>
 					<?php generateEntries($starts_r); ?>
 					</ul>
-					
+
 					<a name="S_anchor"></a>
 					<h3> S </h3>
 					<ul>
 					<?php generateEntries($starts_s); ?>
 					</ul>
-					
+
 					<a name="T_anchor"></a>
 					<h3> T </h3>
 					<ul>
 					<?php generateEntries($starts_t); ?>
 					</ul>
-					
+
 					<a name="U_anchor"></a>
 					<h3> U </h3>
 					<ul>
 					<?php generateEntries($starts_u); ?>
 					</ul>
-					
+
 					<a name="V_anchor"></a>
 					<h3> V </h3>
 					<ul>
 					<?php generateEntries($starts_v); ?>
 					</ul>
-					
+
 					<a name="W_anchor"></a>
 					<h3> W </h3>
 					<ul>
 					<?php generateEntries($starts_w); ?>
 					</ul>
-					
+
 					<a name="X_anchor"></a>
 					<h3> X </h3>
 					<ul>
 					<?php generateEntries($starts_x); ?>
 					</ul>
-					
+
 					<a name="Y_anchor"></a>
 					<h3> Y </h3>
 					<ul>
 					<?php generateEntries($starts_y); ?>
 					</ul>
-					
+
 					<a name="Z_anchor"></a>
 					<h3> Z </h3>
 					<ul>
@@ -301,12 +302,11 @@
 			</nav>
 		</footer>
 
-	</body> 
+	</body>
 
-	
-</html> 
+
+</html>
 
 <?php
-	
-?>
 
+?>
