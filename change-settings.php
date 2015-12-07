@@ -39,4 +39,5 @@ $oldpassword = mysql_result(mysql_query("SELECT password FROM `login` WHERE emai
  {
 		mysql_query("UPDATE tutor SET fname='$fname', lname='$lname' WHERE email = '$email';");
  		header('Location: tutor-profile-success.php');
+ }
 ?>

@@ -10,7 +10,8 @@ if(isset($_SESSION['email'])){
 	session_destroy();
 	}
 } else{
-	header('Location: professor_template.php');
+	$email = $_GET['email'];
+	header('Location: professor_template.php?email='.$email);
 	die();
 }
 ?>
