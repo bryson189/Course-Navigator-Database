@@ -3,11 +3,11 @@
   session_start();
   require('connect.php');
   include 'functions.php';
-  // if (!(endsWith($_POST[email], '@ucalgary.ca')))
-  // {
-  //   echo "Please enter a university of calgary email.";
-  //   die(mysql_error());
-  // }
+  if (!(endsWith($_POST[email], '@ucalgary.ca')))
+  {
+    echo "Please use a university of calgary email.";
+    die(mysql_error());
+  }
   if($_POST[usertype] == 'Student'){
     $sql="INSERT INTO login (email, password, usertype)
     VALUES ('$_POST[email]', '$_POST[password]', '$_POST[usertype]')";

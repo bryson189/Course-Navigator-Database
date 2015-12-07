@@ -1,24 +1,3 @@
-<?php
-error_reporting(E_ALL & ~E_NOTICE);
-session_start();
-
-
-  $course = $_GET['course'];
-if(isset($_SESSION['email'])){
-  $email = $_SESSION['email'];
-  if ($_SESSION['activation_status']==0)
-  {
-  header('Location: account-not-activated.php');
-  session_destroy();
-  }
-  else if ($_SESSION['usertype']!='Student'){
-      header('Location: course_template-logged-in-not-student.php?course='.$course);
-    }
-  }
-  else{
-  header('Location: course_template.php?course='.$course);
-  }
-?>
 
 <!DOCTYPE html>
 <html>
@@ -176,10 +155,6 @@ if(isset($_SESSION['email'])){
                             echo '</td>
                         </tr>';
 
-                       echo'
-          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-          Rate </button>';
-
                     echo '</tbody></table></div></div></div>';
 
 
@@ -205,33 +180,6 @@ if(isset($_SESSION['email'])){
                 <a href="contactus.php">Contact Us</a>
             </nav>
         </footer>
-
-
-<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog " role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"> <strong> Rate this course </strong></h4>
-      </div>
-      <div class="modal-body">
-        <form action="ratecourse.php?course=<?php echo "$deptcode".'-'."$coursenum";?>" method="post">
-          <select name="rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-          <input type="submit">
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 
     </body>
 
