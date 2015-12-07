@@ -3,9 +3,10 @@
   session_start();
   require('connect.php');
   include 'functions.php';
-  if (!(endsWith($_POST[email], '@ucalgary.ca')))
+
+  if (!(endsWith($_POST[email], '@ucalgary.ca')) && $_POST[usertype]!= 'Tutor')
   {
-    echo "Please use a university of calgary email.";
+    echo "Please use a university of calgary email if you are not registering as a tutor.";
     die(mysql_error());
   }
   if($_POST[usertype] == 'Student'){
