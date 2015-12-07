@@ -103,18 +103,18 @@ require('connect.php');
 									if($row==0)
 										echo("No results in Courses<br>");
 									else {
-											echo ("<font size = 2><a href="."/courses.php?id=".$row[2].">".$row[0]." ".$row[1]."</a><br></font>");
+											echo ("<font size = 2><a href="."/course_template.php?course=".$row[0]."-".$row[1].">".$row[0]." ".$row[1]."</a><br></font>");
 									}
 
 
 				          while($row = mysql_fetch_array($result)){
-				              echo ("<font size = 2><a href="."/courses.php?id=".$row[0].">".$row[0]." ".$row[1]."</a><br></font>");
+				              echo ("<font size = 2><a href="."/course_template.php?course=".$row[0]."-".$row[1].">".$row[0]." ".$row[1]."</a><br></font>");
 				          }
 
 
 				          echo("<font size = 4>Tutors</font><br>");
 
-				          $query = "SELECT fname, lname FROM tutor WHERE fname LIKE '%$_POST[keyword]%' OR lname LIKE '%$_POST[keyword]%';";
+				          $query = "SELECT fname, lname, email FROM tutor WHERE fname LIKE '%$_POST[keyword]%' OR lname LIKE '%$_POST[keyword]%';";
 
 				          $result = mysql_query($query) or die(mysql_error());
 				          $count = mysql_num_rows($result);
@@ -123,12 +123,12 @@ require('connect.php');
 									if($row==0)
 										echo("No results in Tutors<br>");
 									else {
-											echo ("<font size = 2><a href="."/professor_template.php?email=".$row[2].">".$row[0]." ".$row[1]." (Email: ".$row[2].")"."</a><br></font>");
+											echo ("<font size = 2><a href="."/tutor_profile.php?email=".$row[2].">".$row[0]." ".$row[1]." (Email: ".$row[2].")"."</a><br></font>");
 										}
 
 
 				          while($row = mysql_fetch_array($result)){
-				          echo ("<font size = 2><a href="."/professor_template.php?email=".$row[2].">".$row[0]." ".$row[1]." (Email: ".$row[2].")"."</a><br></font>");
+				          echo ("<font size = 2><a href="."/tutor_profile.php?email=".$row[2].">".$row[0]." ".$row[1]." (Email: ".$row[2].")"."</a><br></font>");
 				          }
 
 
