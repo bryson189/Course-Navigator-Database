@@ -87,32 +87,32 @@ if(isset($_SESSION['email'])){
 						die("Something went wrong with the query. " . mysql_error());
 					}
 
-					$starts_a = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'A%'");
-					$starts_b = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'B%'");
-					$starts_c = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'C%'");
-					$starts_d = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'D%'");
-					$starts_e = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'E%'");
-					$starts_f = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'F%'");
-					$starts_g = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'G%'");
-					$starts_h = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'H%'");
-					$starts_i = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'I%'");
-					$starts_j = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'J%'");
-					$starts_k = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'K%'");
-					$starts_l = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'L%'");
-					$starts_m = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'M%'");
-					$starts_n = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'N%'");
-					$starts_o = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'O%'");
-					$starts_p = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'P%'");
-					$starts_q = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'Q%'");
-					$starts_r = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'R%'");
-					$starts_s = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'S%'");
-					$starts_t = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'T%'");
-					$starts_u = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'U%'");
-					$starts_v = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'V%'");
-					$starts_w = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'W%'");
-					$starts_x = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'X%'");
-					$starts_y = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'Y%'");
-					$starts_z = mysql_query("SELECT fname, lname, contactemail FROM tutor WHERE lname LIKE 'Z%'");
+					$starts_a = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'A%'");
+					$starts_b = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'B%'");
+					$starts_c = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'C%'");
+					$starts_d = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'D%'");
+					$starts_e = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'E%'");
+					$starts_f = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'F%'");
+					$starts_g = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'G%'");
+					$starts_h = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'H%'");
+					$starts_i = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'I%'");
+					$starts_j = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'J%'");
+					$starts_k = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'K%'");
+					$starts_l = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'L%'");
+					$starts_m = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'M%'");
+					$starts_n = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'N%'");
+					$starts_o = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'O%'");
+					$starts_p = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'P%'");
+					$starts_q = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'Q%'");
+					$starts_r = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'R%'");
+					$starts_s = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'S%'");
+					$starts_t = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'T%'");
+					$starts_u = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'U%'");
+					$starts_v = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'V%'");
+					$starts_w = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'W%'");
+					$starts_x = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'X%'");
+					$starts_y = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'Y%'");
+					$starts_z = mysql_query("SELECT fname, lname, email FROM tutor WHERE lname LIKE 'Z%'");
 	
 					
 					function generateEntries($letter)
