@@ -135,7 +135,7 @@ if(isset($_SESSION['email'])){
 
                         </tr>';
 
-                    $textbooks=mysql_query("SELECT textbookname FROM requiredtextbooks WHERE coursenum='$coursenum' AND deptcode='$deptcode'",$db);
+                    $textbooks=mysql_query("SELECT textbookname, isbn FROM requiredtextbooks WHERE coursenum='$coursenum' AND deptcode='$deptcode'",$db);
 
                     echo '<tr>
                         <td class = "data-head"> Required Textbooks: <td>
@@ -143,7 +143,8 @@ if(isset($_SESSION['email'])){
 
 
                       while($textbook_row=mysql_fetch_array($textbooks)){
-                        echo $textbook_row[0];
+                        $string .= $textbook_row[0].' ISBN: '.$textbook_row[1].'\n';
+                        echo $string;
                       }
 
 

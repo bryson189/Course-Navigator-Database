@@ -11,13 +11,12 @@ if(isset($_SESSION['email'])){
   header('Location: account-not-activated.php');
   session_destroy();
   }
-    $course = $_GET['course'];
+
     $split=explode('-', $course);
 
-    $email = $_SESSION['email'];
-    $query = "SELECT * FROM courserating WHERE deptcode = '$split[0]' AND coursenum = '$split[1]' AND email = '$email' ";
+    $query = "SELECT * FROM courserating WHERE deptcode = '$split[0]' AND coursenum = '$split[1]' AND email = '$email'; ";
     $result = mysql_query($query);
-    $count = count($result);
+    $count = mysql_num_rows($result);
     if ($count > 0){
       header('Location: course_template-logged-in-not-student.php?course='.$course);
     }
@@ -149,7 +148,7 @@ if(isset($_SESSION['email'])){
 
                         </tr>';
 
-                    $textbooks=mysql_query("SELECT textbookname FROM requiredtextbooks WHERE coursenum='$coursenum' AND deptcode='$deptcode'",$db);
+                    $textbooks=mysql_query("SELECT textbookname, isbn FROM requiredtextbooks WHERE coursenum='$coursenum' AND deptcode='$deptcode'",$db);
 
                     echo '<tr>
                         <td class = "data-head"> Required Textbooks: <td>
@@ -157,7 +156,8 @@ if(isset($_SESSION['email'])){
 
 
                       while($textbook_row=mysql_fetch_array($textbooks)){
-                        echo $textbook_row[0];
+                        $string .= $textbook_row[0].' ISBN: '.$textbook_row[1];
+                        echo $string;
                       }
 
 

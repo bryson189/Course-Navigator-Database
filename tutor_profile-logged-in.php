@@ -85,7 +85,7 @@ else{
 
 					$email = $_GET['email'];
 
-					$result = mysql_query(sprintf("SELECT fname, lname, pnumber, email, rating, experience, information
+					$result = mysql_query(sprintf("SELECT fname, lname, pnumber, email,  experience, information
 					FROM tutor WHERE email = '%s' ", mysql_real_escape_string($email)));
 					$row = mysql_fetch_object($result);
 				?>
