@@ -11,6 +11,16 @@ if(isset($_SESSION['email'])){
   header('Location: account-not-activated.php');
   session_destroy();
   }
+    $course = $_GET['course'];
+    $split=explode('-', $course);
+
+    $email = $_SESSION['email'];
+    $query = "SELECT * FROM courserating WHERE deptcode = '$split[0]' AND coursenum = '$split[1]' AND email = '$email' ";
+    $result = mysql_query($query);
+    $count = count($result);
+    if ($count > 0){
+      header('Location: course_template-logged-in-not-student.php?course='.$course);
+    }
   else if ($_SESSION['usertype']!='Student'){
       header('Location: course_template-logged-in-not-student.php?course='.$course);
     }

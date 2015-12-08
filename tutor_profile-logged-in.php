@@ -85,7 +85,7 @@ else{
 
 					$email = $_GET['email'];
 
-					$result = mysql_query(sprintf("SELECT fname, lname, pnumber, email, rating, experience
+					$result = mysql_query(sprintf("SELECT fname, lname, pnumber, email, rating, experience, information
 					FROM tutor WHERE email = '%s' ", mysql_real_escape_string($email)));
 					$row = mysql_fetch_object($result);
 				?>
@@ -125,12 +125,17 @@ else{
 											<td>
 												<?php
 													while($courserow = mysql_fetch_object($courses_taught)){
-														echo $courserow->deptcode . $courserow->coursenum .'<br>';
+														echo $courserow->deptcode . " " .$courserow->coursenum .'<br>';
 													}
 												?>
 											</td>
 										</tr>
 
+										<tr>
+											<td class = "data-head"> Information: </td>
+
+											<td><?php echo $row->information; ?></td>
+										</tr>
 
 										<tr>
 											<td class = "data-head"> Phone No: </td>

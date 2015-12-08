@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	$db = @mysql_connect("localhost","root","default");
 		if(!$db){
 			die("MySQL connection error. " . mysql_error());
@@ -14,12 +15,13 @@
 
 		$rating=$_POST['rating'];
 		$ratingint= (int) $rating;
+		$email = $_SESSION['email'];
 
-		mysql_query("INSERT INTO courserating VALUES('$split[0]', '$split[1]', '$ratingint')", $db);
+		mysql_query("INSERT INTO courserating(deptcode, coursenum, rating, email) VALUES('$split[0]', '$split[1]', '$ratingint', '$email')", $db);
 
 
 		mysql_close();
 
 ?>
 
-<meta http-equiv="refresh" content="0; url=/course_template.php?course=<?php echo $split[0].'-'.$split[1];?> "/>
+<meta http-equiv="refresh" content="0; url=/course_template-logged-in-not-student.php?course=<?php echo $split[0].'-'.$split[1];?> "/>
